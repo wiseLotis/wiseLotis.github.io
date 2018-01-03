@@ -14,7 +14,30 @@
   <link rel="alternate" type="application/rss+xml" title="Your awesome title" href="/feed.xml">
 
  <style>
- 	
+  * {
+    box-sizing: border-box;
+  }
+  html,body{
+   margin: 0;
+   padding: 0;
+   height: 100%;
+   overflow:hidden;
+ }
+ body{
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-pack: center;
+   -webkit-justify-content: center;
+   -ms-flex-pack: center;
+   justify-content: center;
+   -webkit-box-align: center;
+   -webkit-align-items: center;
+   -ms-flex-align: center;
+   align-items: center;
+ }
+
  /* Landscape mode */
  @media only screen and (orientation: landscape) {
    body{
