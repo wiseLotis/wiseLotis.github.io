@@ -9,7 +9,6 @@ layout: default
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
 <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Extended+Text|Permanent+Marker" rel="stylesheet">
-{% include includes.html %}
 <link href="/css/index.css" rel="stylesheet">
 
 	
