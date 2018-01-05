@@ -2,8 +2,15 @@
 <link href="/css/post.css" rel="stylesheet">
   {% include includes.html %}
   {% include header.html %}
-  <div class="row-fluid">
-    <div class="span8">
+  <div class="container">
+  <div class="row">
+  <div class="col-sm-3" style="height:100%;">
+  <div class="side-nav">
+  {% include side_bar.html %}
+  </div>
+</div>
+<div class="col-sm-9">
+  <div class="content-wrapper">
       <div class="postbody">
         <h2 class="post-title">{{page.title}}</h2>
         <p class="muted">{{page.date | date: '%B %d, %Y'}}</p>
@@ -15,5 +22,7 @@
       </div>
     </div>
   </div>
+</div>
+</div>
  {% include comments.html %}
  {% include footer.html %}

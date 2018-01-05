@@ -1,12 +1,13 @@
 ---
-layout: post
+layout: default
 title:  "블로그 시작하기"
 slug: "start-blog"
 date:   2018-01-03 15:28:00 +0900
 discription: "블로그를 처음 시작하며....."
-categories: notice
+categories: free
+tags: [notice, 기냥, tag3]
 comments: true
-order: 001
+image: "http://res.cloudinary.com/dm7h7e8xj/image/upload/v1504809708/django_g7djdj.jpg"
 ---
 my first posts 
 

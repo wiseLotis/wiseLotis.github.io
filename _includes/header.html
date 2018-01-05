@@ -16,17 +16,22 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span> 
       </button>
-      <a class="navbar-brand" href="#">wiseLotis</a>
+      <a class="navbar-brand {% if site.logo %} has-logo {% endif %}" href="/">{% if site.logo %} <img src="{{ site.logo | prepend: site.url }}"/> {% else %} wiseLotis {% endif %}</a>
+     
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-         <li><a href="#">Posts</a></li>
-        <li><a href="#">About</a></li> 
+     
+    <div class=" navbar-collapse" id="myNavbar">
+       <ul class="nav navbar-nav">
+         <li> <a href="/blog">Home</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+         <li><a href="/Posts">Posts</a></li>
+        <li><a href="/About">About</a></li> 
       </ul>
+     <!--  <ul class="nav navbar-nav navbar-right">
+       <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+       <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+     </ul> -->
     </div>
   </div>
 </nav>

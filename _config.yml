@@ -15,23 +15,20 @@
 # in the templates via {{ site.myvariable }}.
 title: wiseLotis
 email: wiselotis@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
+description:  # this means to ignore newlines until "baseurl:"
   This is wiseLotis blog~ nice to meet you~! 
-baseurl: "" # the subpath of your site, e.g. /blog
-#url: "http://127.0.0.1:4000/" # the base hostname & protocol for your site, e.g. http://example.com
+# baseurl: "" # the subpath of your site, e.g. /blog
+# url: "http://127.0.0.1:4000/" # the base hostname & protocol for your site, e.g. http://example.com
 url: "https://wiselotis.github.io/"
+baseurl: "https://wiselotis.github.io/"
 twitter_username: 
 github_username:  wiseLotis
 cover: "/assets/main.jpg"
-logo: ""
-post_image: "assets/main.jpg"
+logo: "/assets/logo_white.png"
+post_image: "/assets/main.jpg"
 
-# Build settings
-markdown: kramdown
 paginate: 5
-paginate_path: "/page:num/"
-inter_post_navigation: false
-highlightjs_theme: "monokai-sublime"
+paginate_path: "/blog/page:num/"
 
 # Archive settings (see https://github.com/jekyll/jekyll-archives/)
 jekyll-archives:
@@ -44,18 +41,7 @@ jekyll-archives:
     tag: '/tag/:name/'
 # Disqus comments
 # disqus_shortname: bencentra
- 
-# Category descriptions (for archive pages)
-descriptions:
-  - cat: free
-    desc: "post free"
-
-  - cat: tech
-    desc: "Posts describing Jekyll setup techniques."
-
-  - cat: travel
-    desc: "travel descriptions"
-
+  
 # Build settings
 markdown: kramdown
 #theme: minima

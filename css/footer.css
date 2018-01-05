@@ -1,11 +1,11 @@
 
 /* footer */
 .site-footer {
- 	padding: 10px 0; 
- 	position: absolute;
+ 	padding: 10px 0;
+    position: fixed;
     width: 100%;
     bottom: 1px;
-    background-color:#333253;
+    background-color: #333253;
     border-top: 1px solid rgba(255,255,255,0.4);
 }
 

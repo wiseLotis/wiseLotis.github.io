@@ -1,0 +1,6 @@
+<ul>
+{% for category in site.categories %}
+   <li> <a href="/posts/{{ category[0] }}/" style="text-decoration: none;">{% if category[0] == 'notice' %}{{ category[0] | upcase }}{% else %}{{ category[0] | capitalize }}{% endif %}</a>
+   	<p>{{category[0]_description}}</p></li>
+{% endfor %}
+</ul>
