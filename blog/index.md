@@ -3,14 +3,16 @@ title: wiseLotis
 permalink: /blog/
 layout: home
 ---
-<link rel="stylesheet" href="/css/blog_index.css"/>
+<link rel="stylesheet" href="/css/home.css"/>
 
 <div class="container">
 <div class="row">
-	{% for post in site.tags["notice"]%}
+	{% for post in site.tags["home"]%}
 	<div class="col-sm-4">
 		<div class="post-wrapper inverse">
-		<div class="post-category"><a href="/posts/{{post.categories}}"><span>{{post.categories}}</span></a></div>
+		<div class="post-category">
+			<a href="/posts/{{post.categories[0]}}/"><span>{{post.categories[0]}}</span></a>
+		</div>
 		<a href="{{post.url}}">
 		<div class="post-inner">
 			<div class="post-image">

@@ -1,26 +1,29 @@
 ---
 layout: default
 ---
-<p>Posts related to: {{ page.title }}</>
-
+<link href="/css/category.css" rel="stylesheet">
+<!-- <p class="subtitle">Posts related to: {{ page.title }}</p>
+ -->
 {% unless page.content == '' %}
   <p>{{ page.content }}</p>
 {% endunless %}
 
 {% unless site.categories.[page.category] | size > 0 %}
-  <p>No posts in this category at this time.</p>
+  <p class="noposts MT50" >No posts in this category at this time.</p>
 {% endunless %}
 
-{% for post in site.categories.[page.category] %}
-<div class="post-preview">
+<ul class="post-preview MT40">
+  {% for post in site.categories.[page.category] %}
+
+    <li>
     <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">            
+        <p class="post-title">            
             {{ post.title }}
-        </h2>
-        {% if post.subtitle %}
-        <h3 class="post-subtitle">
-            {{ post.subtitle }}
-        </h3>
+        </p>
+        {% if post.discription %}
+        <p class="post-discription">
+            {{ post.discription }}
+        </p>
         {% endif %}
     </a>
     <p class="post-meta">
@@ -32,7 +35,9 @@ layout: default
       {% endif %} 
       on {{ post.date | date: "%B %-d, %Y" }}
     </p>
-</div>
+  </li>
+  {% endfor %}
+
+</ul>
 <hr>
-{% endfor %}
     

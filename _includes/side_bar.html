@@ -1,6 +1,46 @@
-<ul>
+<!-- <ul class="MT20">
 {% for category in site.categories %}
    <li> <a href="/posts/{{ category[0] }}/" style="text-decoration: none;">{% if category[0] == 'notice' %}{{ category[0] | upcase }}{% else %}{{ category[0] | capitalize }}{% endif %}</a>
    	<p>{{category[0]_description}}</p></li>
 {% endfor %}
+</ul> -->
+
+	<ul class="nav nav-pills flex-column MT20 ML05">
+		{% for category in site.data.categories %}
+			{% if category.disable == nil %}
+					<li class="nav-item dropdown">
+						<a class="nav-link category " href="{{category.permalink}}" >{{category.name}}</a>
+						{% if category.subcategories %}
+						<ul class="sub_ul MT05 ML15">
+							{% for sub in category.subcategories %}
+								{% if sub.disable == nil %}
+								<li class="nav-item">
+								<a class="nav-link sub_category" data-toggle="" href="{{sub.permalink}}">
+								{{sub.name}}</a>
+								</li>
+								<!-- <div class="dropdown-divider"></div> -->
+								{% endif %}
+							{% endfor %}
+						</ul>
+						{% endif %}
+					</li>
+			{% endif %}
+		{% endfor %}
+	</ul>
+	<script>
+	</script>
+<!-- 
+<ul class="MT20 ML05">
+	<li>
+		<a href="/posts/free">Free</a>
+	</li>
 </ul>
+
+<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+	<ul class="MT20 ML05">
+  <li><a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="/posts/free/" role="tab" aria-controls="v-pills-home" aria-selected="false">Free</a></li><li>
+  <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Tech</a></li><li>
+  <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a></li><li>
+  <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a></li>
+</ul>
+</div> -->

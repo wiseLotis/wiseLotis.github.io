@@ -20,7 +20,7 @@ body{
 	-webkit-align-items: center;
 	-ms-flex-align: center;
 	align-items: center;
-	background-color:#333253;
+	background-color:#ff6f6f;
 }
 .maintext{
 	font-family: 'Libre Barcode 39 Extended Text', cursive;
@@ -30,12 +30,14 @@ body{
 	width:100%; 
 	text-align:center;
 }
-a:-webkit-any-link {
+a, a:-webkit-any-link {
 	color: #ffffff;
 	cursor: pointer;
 	text-decoration:none;
 }
-
+a:visited{
+	color:#ffffff !important;
+}
 @media screen and (max-width: 800px) {
 	.maintext{
 		font-family: 'Permanent Marker', cursive;
