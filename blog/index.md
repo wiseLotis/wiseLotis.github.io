@@ -20,7 +20,7 @@ layout: home
 					<img src="{% if post.image %} {{headPost.image}} {% else %} {{site.post_image}} {% endif %}"/>
 					</div>
 					<h3 class="post-title">{{headPost.title}}</h3>
-					<div class="post-description">{{headPost.discription}}</div>
+					<div class="post-description">{{headPost.description}}</div>
 					<span class="post-date">{{headPost.date | date: '%B %d, %Y'}}</span>
 				</div>
 			</a>
@@ -44,7 +44,7 @@ layout: home
 					<img src="{% if post.image %} {{post.image}} {% else %} {{site.post_image}} {% endif %}"/>
 					</div>
 					<h3 class="post-title">{{post.title}}</h3>
-					<div class="post-description">{{post.discription}}</div>
+					<div class="post-description">{{post.description}}</div>
 					<span class="post-date">{{post.date | date: '%B %d, %Y'}}</span>
 				</div>
 			</a>

@@ -200,9 +200,11 @@ $breakpoints: (
 
 	.site-footer{
 		padding: 10px 0;
-		position: fixed;
+		/* position: fixed; 
+				bottom: 1px;*/
+		position:absolute; 
+		bottom:-20px;
 		width: 100%;
-		bottom: 1px;
 		background-color: $main-color;
 		color:#ffffff6e;
 		font-size:13px;
