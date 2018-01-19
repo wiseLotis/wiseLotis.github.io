@@ -14,7 +14,7 @@ layout: home
 				
 				<div class="head-title">
 					<div class="category">
-					<a href="/posts/{{post.categories[0]}}"><span>{{post.categories[0]}}>> </span></a>
+					<a href="/posts/{{post.categories[0]}}"><span>{{post.categories[0]}}> </span></a>
 				</div>					<div class=''>
 <!-- -->
 						<h2>{{post.title}}</h2>

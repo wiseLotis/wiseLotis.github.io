@@ -16,12 +16,18 @@ body{
     background-color:#ffffffe3;
     color: $fc-color;
     min-height:100%; 
+    margin-bottom: 1em;
+
     .head-title{
         color:$sub-color;
         margin: 2em 0; 
         .category{
             text-align:right; 
             a{
+                color:$main-color;
+                position: absolute;
+                top: 0;
+                right: 0;
                 padding:10px 20px; 
             }
         }
@@ -29,6 +35,7 @@ body{
             color:$mute-color; 
             font-size:0.8em; 
             float:right;
+
         }
     }
     .inner-wrapper{
@@ -73,7 +80,7 @@ body{
         background-color: #ffffff;
         color:$main-color;
         max-width: 350px;
-        margin: 10px auto 20px auto;
+        margin: auto auto 20px auto;
         position:relative;
         padding-top: 25px;
         .post-title{
