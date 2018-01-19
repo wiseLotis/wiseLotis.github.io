@@ -7,13 +7,13 @@ $fc-color:#26292c;
 $em-fc-color:#cf1b27;
 $dark-fc-color:#523e7c;
 $overflow_hid:hidden; 
-
-
+$mute-color:#828282; 
+$hover-color:#faefed; 
 $breakpoints: (
-	'small': (max-width:600px),
-	'medium': (min-width: 800px),
-	'large': (min-width: 1000px),
-	'huge': (min-width: 1200px)
+	'small': (max-width:575px),
+	'medium': (max-width: 800px),
+	'large': (max-width: 1000px),
+	'huge': (max-width: 1200px)
 	);
 
 /// 반응형 매니저
@@ -37,6 +37,10 @@ $breakpoints: (
 			@error 'No value found for `#{$breakpoint}`. '
 			+ 'Please make sure it is defined in `$breakpoints` map.';
 		}
+	}
+
+	.container{
+		width:100% !important; 
 	}
 
 	@mixin ellipsis{
@@ -168,7 +172,11 @@ $breakpoints: (
 			margin-bottom:0px;
 		}
 	}
-
+	.col-sm-3.sidebar_wrapper{
+		@include respond-to('small'){
+			display:none; 
+		}
+	}
 	.sidebar{
 		@media screen and (min-width: 600px) {
 			&{
@@ -187,6 +195,7 @@ $breakpoints: (
 			font-size: 0.9em;
 			opacity: 0.8; 
 		}
+
 	}
 
 	.site-footer{
@@ -198,7 +207,8 @@ $breakpoints: (
 		color:#ffffff6e;
 		font-size:13px;
 		@include respond-to('small'){
-		 	position: absolute; 
+			position: absolute;
+			bottom: -20px;
 		}
 		.footer-heading {
 			color:#ffffff6e;
@@ -283,9 +293,6 @@ $breakpoints: (
 		padding:20px 10px;
 		max-width: 1000px;
 		margin: auto;
-	}
-	.container{
-		width:100% !important; 
 	}
 
 
@@ -390,6 +397,8 @@ $breakpoints: (
  /* overriding */
  body{
  	position:relative;
+ 	padding-top:60px !important; 
+ 	padding-bottom: 150px !important;
  }
  h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure,
  .highlight {

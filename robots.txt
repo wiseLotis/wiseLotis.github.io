@@ -1,4 +1,10 @@
-User-agent: *
+User-agent: Googlebot
+User-agent: DAUMOA
+User-agent: NaverBot
 Allow: /
+Disallow: /diary/
+
+User-agent: BadBot
+Disallow: /
 
 Sitemap: https://wiselotis.github.io/sitemap.xml

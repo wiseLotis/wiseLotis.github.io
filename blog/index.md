@@ -6,7 +6,7 @@ layout: home
 
 <link rel="stylesheet" href="/css/home.css"/>
 
-<div class="container">
+<div class="">
 <div class="row">
 {%  for headPost in site.tags["headPost"] %}
 <div class="col-sm-4">
