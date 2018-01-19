@@ -9,7 +9,7 @@ google: true
 tags: [etc blog]
 comments: true
 image: "/assets/posts_title/using_sass.jpg"
-sitemap : 
+sitemap : false
  priority: 1.0
 ---
 
