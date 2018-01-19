@@ -1,13 +1,17 @@
 ---
-layout: default
+layout: post
 title:  "sass 이용하기"
 subtitle: ""
-slug: "css-1" 
+slug: "using_sass" 
 discription: "멋지고 간편하게 css작성하기"
-categories: frontend
+categories: etc tech
+google: true 
 tags: [css, sass, home]
 comments: true
-image: "http://res.cloudinary.com/dm7h7e8xj/image/upload/v1504809708/django_g7djdj.jpg"
+image: "/assets/posts_title/using_sass.jpg"
+sitemap : 
+ changefreq: daily
+ priority: 1.0
 ---
 Sass란? <br>
 =======
@@ -168,3 +172,5 @@ color: $dark-fc-color !important;
 
 </div></div></div>
 위와같이 사용하는것 외에도 Extend , Mixin, 조건문, 심지어는 경고와 오류까지 다양하게 css를 작업할 수있다 .
+
+...작성중... 

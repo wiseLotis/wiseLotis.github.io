@@ -10,6 +10,7 @@ $overflow_hid:hidden;
 
 
 $breakpoints: (
+	'small': (max-width:600px),
 	'medium': (min-width: 800px),
 	'large': (min-width: 1000px),
 	'huge': (min-width: 1200px)
@@ -196,7 +197,9 @@ $breakpoints: (
 		background-color: $main-color;
 		color:#ffffff6e;
 		font-size:13px;
-
+		@include respond-to('small'){
+		 	position: absolute; 
+		}
 		.footer-heading {
 			color:#ffffff6e;
 			font-weight:600;
