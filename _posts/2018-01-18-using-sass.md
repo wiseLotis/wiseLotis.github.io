@@ -12,6 +12,7 @@ image: "/assets/posts_title/using_sass.jpg"
 sitemap : 
  changefreq: daily
  priority: 1.0
+feed : true 
 ---
 Sass란? <br>
 =======

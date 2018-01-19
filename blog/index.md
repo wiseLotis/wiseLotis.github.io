@@ -36,7 +36,7 @@ layout: home
 	<div class="col-sm-4">
 		<div class="post-wrapper inverse">
 			<div class="post-category">
-				<a href="/posts/{{post.categories[0]}"><span>{{post.categories[0]}}</span></a>
+				<a href="/posts/{{post.categories[0]}}"><span>{{post.categories[0]}}</span></a>
 			</div>
 			<a href="{{post.url}}">
 				<div class="post-inner">
