@@ -25,7 +25,7 @@ twitter_username:
 github_username:  wiseLotis
 cover: "/assets/main.jpg"
 logo: "/assets/logo_white.png"
-post_image: "/assets/default_post_img.jpg"
+post_image: "/assets/start-blog.jpg"
 sass:
   sass_dir: _sass
   style: compressed

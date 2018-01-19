@@ -19,10 +19,10 @@ body{
     color: $main-color; 
     font-size:3em; 
     text-align:right; 
-    background: url('/assets/category/category_img4.png') no-repeat center center; 
+    background: url('/assets/category/pink_leaf.jpg') no-repeat center center; 
     @include respond-to('small'){
      min-height:25%; 
-     background: url('/assets/category/category_img4_half.png') no-repeat center center; 
+     background: url('/assets/category/pink_leaf_half.jpg') no-repeat center center; 
     } 
     background-size:100% auto !important; 
     white-space:normal; 
