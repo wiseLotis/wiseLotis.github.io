@@ -3,7 +3,7 @@
 <link href="/css/post.css" rel="stylesheet">
   {% include includes.html %}
 </head>
-<body style="padding-top:70px; padding-bottom: 150px;"> 
+<body style="padding-top:60px;"> 
   {% include header.html %}
   <div class="">
   <div class="row">
@@ -12,21 +12,22 @@
   {% include side_bar.html %}
   </div>
 </div>
-<div class="col-sm-9" style="border-top: 1px solid #f1f1f1 ">
-  <div class="content-wrapper">
-      <div class="postbody">
-        <h2 class="post-title">{{page.title}}</h2>
+<div class="col-sm-9 content-wrapper" style="border-top: 1px solid #f1f1f1 ">
+  <div class="content">
+    <h2 class="post-title">{{page.title}}</h2>
         <p class="muted">{{page.date | date: '%B %d, %Y'}}</p>
+      <div class="postbody">
         {{content}}
         <br>
         <br>
       </div>
     </div>
+ <div class="MT20 comments-wrapper">
+     {% include comments.html %}
+  </div>
   </div>
 </div>
 </div>
- {% include comments.html %}
-
  {% include footer.html %}
 </body>
 </html>

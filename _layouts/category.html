@@ -12,7 +12,7 @@
           {% include side_bar.html %}
         </div>
       </div>
-      <div class="col-sm-9" style="border-top: 1px solid #f1f1f1 ">
+      <div class="col-sm-9 content-wrapper" style="border-top: 1px solid #f1f1f1 ">
          <div class='category-title' {% if page.category_image %} style="background-image: url('{{ page.category_image }}'); " {% endif %}>
           <div>
             <h2 > {{page.title}}</h2>
@@ -36,10 +36,10 @@
 <ul class="post-preview">
   {% for post in site.categories.[page.category] %}
   <li>
-    <a href="{{ post.url | prepend: site.baseurl }}"><div class="row">
+    <a href="{{ post.url | prepend: site.baseurl }}" ><div class="row">
       <div class='col-sm-4'>
       <span class="post-title">            
-        {{ post.title }} 
+        {{ post.title }} <span class="disqus-comment-count" data-disqus-url="{{ post.url | prepend: site.url }}"></span>
       </span>
       {% if post.subtitle %}
       <p class="post-subtitle">
@@ -68,13 +68,14 @@
   </a>
   </li>
   {% endfor %}
-
 </ul>
 </div>
 </div>
 </div>
 </div>
 {% include footer.html %}
+<script id="dsq-count-scr" src="//wiselotis.disqus.com/count.js" async></script>
+
 </body>
 </html>
 

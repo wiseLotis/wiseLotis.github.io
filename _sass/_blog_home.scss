@@ -1,9 +1,9 @@
 
 body{
     background: url('/assets/back_top.jpg'), url('/assets/back_bottom_leaf.jpg') ; 
-    background-repeat: no-repeat, no-repeat; 
-    background-position: top center, bottom center;
-    background-size: 100% auto; 
+    background-repeat: repeat-x; 
+    background-position: top left, bottom left;
+    background-size: auto 10%; 
     @include respond-to('small'){
         background-image: url('/assets/back_top.jpg'), url('/assets/back_bottom.jpg') ; 
         background-repeat: no-repeat, no-repeat; 
@@ -17,7 +17,7 @@ body{
     color: $fc-color;
     min-height:100%; 
     margin-bottom: 1em;
-
+    padding:0px; 
     .head-title{
         color:$sub-color;
         margin: 2em 0; 
