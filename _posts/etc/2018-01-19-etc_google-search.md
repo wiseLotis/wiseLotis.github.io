@@ -5,7 +5,7 @@ subtitle: "plugin없이 google 등록하기. "
 slug: "etc_google-search" 
 description: "githubPage 의 글을 플러그인 없이 google 검색이 가능하도록 sitemap.xml을 작성하자. "
 categories: etc tech
-tags: [blog, headpost]
+tags: [headpost]
 comments: true
 image: /assets/posts_con/etc/google-search_title.jpg
 ---

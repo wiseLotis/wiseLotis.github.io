@@ -181,3 +181,4 @@ color: $dark-fc-color !important;
 - 이상적인 행의 너비는 80 글자;
 - 적절하게 쓰인 여러 행의 CSS 규칙;
 - 공백의 의미 있는 사용.
+- 인코딩: *@charset 'utf-8';*  

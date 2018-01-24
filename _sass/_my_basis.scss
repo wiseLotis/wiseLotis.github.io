@@ -469,4 +469,86 @@ $breakpoints: (
 
  .row{ width:100%; margin:0px !important;}
 
+ .subtags_wrapper{
+ 	display:inline-block;
+ 	margin-top:20px;
+ 	width:100%; 
+ 	min-height:250px; 
+ 	border:1px solid $main-color; 
+ 	border-radius:10px; 
+ 	position:relative; 
+ 	padding:2.5em 10px 1em 10px; 
 	 
+ 	h4{
+ 		color:$main-color; 
+ 		display:inline-block; 
+ 		position:absolute;
+ 		top: -0.5em;
+ 		background-color: #ffffff;
+ 		left: 1em;
+ 		padding: 0 10px; 
+ 	}
+ 	ul{
+ 		margin:0;
+ 	}
+ 	[class^='tag_']{
+		padding:10px; 
+		font-weight:800; 
+		font-size:2.5em; 
+		color:$sub-color; 
+		&:hover, &:focus{
+			background-color:$sub-color; 
+			border-radius:5px; 
+			a{
+				color:#ffffff !important; 
+				text-decoration:none; 
+			}
+		}
+ 	}
+
+ 	.tag_{
+ 		&1{
+ 			font-weight:400; 
+ 			font-size:0.9em;
+ 			a{
+ 				color:$main-color !important;  
+ 			}
+ 		}
+ 		&2{
+ 			font-weight:400; 
+ 			font-size:1.2em; 
+ 			a{
+  			color:$sub-color !important; 				
+ 			}
+ 		}
+ 		&3{
+ 			font-weight:400; 
+ 			font-size:1.5em; 
+ 			a{
+	 			color: $dark-main-color !important; 
+ 			}
+ 		}
+ 		&4{
+ 			font-weight:600; 
+ 			font-size:1.8em; 
+ 			a{
+  				color:$main-color !important; 				
+ 			}
+ 		}
+ 		&5{
+ 			font-weight:600; 
+ 			font-size:2.0em;
+ 			a{
+  				color:$sub-color !important; 				
+ 			}
+ 		}
+ 		&6{
+ 			font-weight:600; 
+ 			font-size:2.2em;
+ 			a{
+  				colot:$dark-main-color !important;				
+ 			}
+ 		}  
+ 	}
+
+ }

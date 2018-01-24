@@ -29,9 +29,9 @@ layout: home
 					</div>
 					<div class="head-body">{{post.content}}</div>
 					<div class="tagWrapper">
-						{% for tag in post.tags %}
+						{% for tag in post.tags %} {% if tag != "headpost" %}
 						<a href='/tags/{{ tag }}' class="post-tag"> {{ tag }} </a>
-						{% endfor %}
+						{% endif %} {% endfor %}
 					</div>
 				</div>
 			</div>
@@ -52,14 +52,17 @@ layout: home
 				<!-- --><p class="post-date">
 				{{post.date | date: '%B %d, %Y'}}</p>
 				<div class="post-tagWrapper">
-							{% for tag in post.tags %}
-							<span class="post-tag"><a href="#">{{ tag }}</a></span>
+							{% for tag in post.tags %} {% if tag != "home" %}
+							<span class="post-tag"><a href="/tags/{{tag}}">{{ tag }}</a></span> {% endif %}
 							{% endfor %}
 						</div>
 				<!-- --></div>
 				</li>
 				{% endfor %}
 				</ul>
+			<div class="subtags_wrapper">
+				{% include sub_tags.html %}
+			</div>
 		</div>
 	</div>
 </div>

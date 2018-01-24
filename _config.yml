@@ -17,10 +17,10 @@ title: wiseLotis
 email: wiselotis@gmail.com
 description:  # this means to ignore newlines until "baseurl:"
   This is wiseLotis blog~ nice to meet you~! 
-# baseurl: "http://127.0.0.1:4000/" # the subpath of your site, e.g. /blog
-# url: "http://127.0.0.1:4000/" # the base hostname & protocol for your site, e.g. http://example.com
-url: "https://wiselotis.github.io/"
-baseurl: "https://wiselotis.github.io/"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://127.0.0.1:4000/" # the base hostname & protocol for your site, e.g. http://example.com
+# url: "https://wiselotis.github.io/"
+# baseurl: "https://wiselotis.github.io/"
 twitter_username: 
 github_username:  wiseLotis
 cover: "/assets/main.jpg"
@@ -29,7 +29,7 @@ post_image: "/assets/start-blog.jpg"
 sass:
   sass_dir: _sass
   style: compressed
-   
+
 paginate: 5
 paginate_path: "/blog/page:num/"
 
@@ -43,7 +43,7 @@ jekyll-archives:
     category: '/category/:name/'
     tag: '/tag/:name/'
 # Disqus comments
-# disqus_shortname: bencentra
+disqus_shortname: "wiselotis"
   
 # Build settings
 markdown: kramdown
