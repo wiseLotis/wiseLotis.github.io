@@ -5,11 +5,11 @@ subtitle: "plugin없이 google 등록하기. "
 slug: "etc_google-search" 
 description: "githubPage 의 글을 플러그인 없이 google 검색이 가능하도록 sitemap.xml을 작성하자. "
 categories: etc tech
-tags: [headpost]
+tags: [jekyll, home]
 comments: true
 image: /assets/posts_con/etc/google-search_title.jpg
 ---
-/robots.txt 작성 <a class='btn btn-code' data-toggle="collapse" href="#rebots">CODE</a> 
+/robots.txt 작성 <a class='btn btn-code basic' data-toggle="collapse" href="#rebots">CODE</a> 
 <div class="collapse_wrapper">
 <div class="collapse" id="rebots">
 	<div class="card">
@@ -31,7 +31,7 @@ Sitemap: https://wiselotis.github.io/sitemap.xml
 </div>
 
 
-/sitemap.xml 작성 <a class='btn btn-code' data-toggle="collapse" href="#basic">CODE</a> 
+/sitemap.xml 작성 <a class='btn btn-code basic' data-toggle="collapse" href="#basic">CODE</a> 
 <div class="collapse_wrapper">
 <div class="collapse" id="basic">
 	<div class="card">
@@ -111,14 +111,14 @@ sitemap :
 gem install 
 > gem install jekyll-sitemap
 
-127.0.0.1:4000/sitemap.xml 에서 확인 
+127.0.0.1:4000/sitemap.xml 에서 확인 <br>
 ![](/assets/posts_con/etc/google-search_img7.png)
 
-google 로그인 후 나의 웹 사이트 등록 
+google 로그인 후 나의 웹 사이트 등록 <br>
 ![](/assets/posts_con/etc/google-search_img1.jpg)
 
-google에서 down받은 확인용 html을 루트 아래에 복사 
-웹페이지를 닫지 말것 
+google에서 down받은 확인용 html을 루트 아래에 복사 <br>
+웹페이지를 닫지 말것 <br>
 ![](/assets/posts_con/etc/google-search_img2.jpg)
 
 origin master에 push 

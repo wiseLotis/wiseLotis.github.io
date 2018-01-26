@@ -7,11 +7,13 @@ $sub-color:#E14D43;
 $dark-main-color:#95212c;
 $fc-color:#26292c;
 $em-fc-color:#cf1b27;
+$link-fc-color:#2e9fff;
 $dark-fc-color:#523e7c;
 $overflow_hid:hidden; 
 $mute-color:#828282; 
 $hover-color:#faefed; 
 $breakpoints: (
+	'x-small': (max-width:375px), 
 	'small': (max-width:575px),
 	'medium': (max-width: 800px),
 	'large': (max-width: 1000px),
@@ -68,49 +70,49 @@ $breakpoints: (
 	/*link*/
 
 	a, a:-webkit-any-link {
-		color: $em-fc-color !important;
-		text-decoration: none;
+		color: $dark-fc-color;
+		text-decoration: none !important;
+		.basic &, &.basic{
+			color: $main-color !important;
+		}
+		.inverse &, &.inverse{
+			color: #ffffff !important;
+		}
+		.content-wrapper .postbody &:not(.basic){
+			color: $link-fc-color !important;
+ 		}
 	}
 
 	a:hover{
-		color: $dark-fc-color !important;
-		text-decoration: underline;
-	}
-
-	a:visited {
-		color: $dark-fc-color !important;
+		color: $dark-fc-color;
 		text-decoration: none;
-	}
-
-
-	.basic { 
-		a, a:-webkit-any-link {
-			color: $main-color !important;
-			text-decoration: none;
+		.basic &, &.basic{
+			color: $em-fc-color !important;
 		}
-		a:hover{
+		.inverse &, &.inverse{
+			color: $dark-fc-color !important;
+		}
+		.content-wrapper .postbody &{
 			color: $em-fc-color !important;
 			text-decoration: underline;
 		}
-		a:visited {
-			color: $dark-fc-color !important;
-			text-decoration: none;
-		}
-	}
-	.inverse{
-		a,  a:-webkit-any-link {
-			color: #ffffff !important;
-			text-decoration: none !important;
-		}
-		a:visited{
-			color: rgba(255,255,255,0.4) !important;
-			text-decoration: none;
-		}
-		a:hover, a:focus{
-			color: $dark-fc-color !important;
-		}
 	}
 
+	a:visited {
+		color: $dark-fc-color;
+		text-decoration: none;
+		.basic &, &.basic{
+			color: $main-color !important;
+		}
+		.inverse &, &.inverse{
+			color: rgba(255,255,255,0.4) !important;
+		}
+		.content-wrapper .postbody &{
+			color: $link-fc-color;
+			text-decoration: none;
+		}
+	} 
+ 
 
 	.navbar{
 		border-radius:0px !important; 
@@ -253,7 +255,9 @@ $breakpoints: (
 			text-decoration: none;    
 		}
 
-
+		.social-media-list{
+			float:right; 
+		}
 		.footer-col {
 			float: left;
 			padding-left: 15px
@@ -422,13 +426,14 @@ $breakpoints: (
  }
 
 
- .btn-code {
- 	border: 1px solid #95212c !important;
+ .btn-code{
+ 	border: 1px solid $em-fc-color !important;
  	font-size: 0.8em !important;
  	border-radius: 1em !important;
  	margin-left: 1em;
  	float: right;
- }
+ 		 color:$em-fc-color !important;
+  } 
 
  .collapse_wrapper {
  	border-top: 2px solid #95212c !important;
@@ -471,14 +476,14 @@ $breakpoints: (
 
  .subtags_wrapper{
  	display:inline-block;
- 	margin-top:20px;
- 	width:100%; 
+	width: 90%; margin:auto;  
+	margin-top:20px;		
  	min-height:250px; 
  	border:1px solid $main-color; 
  	border-radius:10px; 
  	position:relative; 
  	padding:2.5em 10px 1em 10px; 
-	 
+
  	h4{
  		color:$main-color; 
  		display:inline-block; 
@@ -492,18 +497,19 @@ $breakpoints: (
  		margin:0;
  	}
  	[class^='tag_']{
-		padding:10px; 
-		font-weight:800; 
-		font-size:2.5em; 
-		color:$sub-color; 
-		&:hover, &:focus{
-			background-color:$sub-color; 
-			border-radius:5px; 
-			a{
-				color:#ffffff !important; 
-				text-decoration:none; 
-			}
-		}
+ 		padding:10px; 
+ 		font-weight:800; 
+ 		font-size:2.5em; 
+ 		display:inline-block; 
+ 		color:$sub-color; 
+ 		&:hover, &:focus{
+ 			background-color:$sub-color; 
+ 			border-radius:5px; 
+ 			a{
+ 				color:#ffffff !important; 
+ 				text-decoration:none; 
+ 			}
+ 		}
  	}
 
  	.tag_{
@@ -518,37 +524,44 @@ $breakpoints: (
  			font-weight:400; 
  			font-size:1.2em; 
  			a{
-  			color:$sub-color !important; 				
+ 				color:$sub-color !important; 				
  			}
  		}
  		&3{
  			font-weight:400; 
  			font-size:1.5em; 
  			a{
-	 			color: $dark-main-color !important; 
+ 				color: $dark-main-color !important; 
  			}
  		}
  		&4{
  			font-weight:600; 
  			font-size:1.8em; 
  			a{
-  				color:$main-color !important; 				
+ 				color:$main-color !important; 				
  			}
  		}
  		&5{
  			font-weight:600; 
  			font-size:2.0em;
  			a{
-  				color:$sub-color !important; 				
+ 				color:$sub-color !important; 				
  			}
  		}
  		&6{
  			font-weight:600; 
  			font-size:2.2em;
  			a{
-  				colot:$dark-main-color !important;				
+ 				colot:$dark-main-color !important;				
  			}
  		}  
  	}
 
+ }
+
+ .somebox{
+	padding: 10px;
+    background-color: #ffffff;
+    margin-top: 1em;
+    border-radius: 5px
  }

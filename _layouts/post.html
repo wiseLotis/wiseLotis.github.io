@@ -19,9 +19,16 @@
       <div class="postbody">
         {{content}}
         <br>
+              <div class="tagWrapper">
+              {% for tag in page.tags %} {% if tag !="home" and tag !="headpost" %}
+              <span class="post-tag"><a href="/tags/{{tag}}" class='basic'>{{ tag }}</a></span> {% endif %}
+              {% endfor %}
+            </div>
+        <!-- --></div>
+    </div>
         <br>
       </div>
-    </div>
+
     {% if page.comments %}
  <div class="MT20 comments-wrapper">
      {% include comments.html %}

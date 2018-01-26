@@ -10,10 +10,9 @@
 - name: tech
   permalink: /posts/tech
   subcategories:  
-    - name: frontEnd
+    - name: frontend
       desc: html, javascript, jquery, css, view....  
       permalink: /posts/frontend/
-      disable: true 
 
     - name: java 
       desc: java
@@ -23,13 +22,11 @@
     - name: python
       desc: 재미있는 python
       permalink: /posts/python
-      disable: true 
-
-    - name: etc 
-      desc: 기타
-      permalink: /posts/etc
 
     - name: django
       desc: python/Django를 이용한 웹페이지 만들기
       permalink: /posts/django
-      disable: true
+
+    - name: etc 
+      desc: 기타
+      permalink: /posts/etc
