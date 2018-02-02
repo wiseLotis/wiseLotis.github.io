@@ -14,26 +14,30 @@ body{
     margin: auto;
     margin-bottom:30px; 
 }
-
+.content-wrapper{
+    padding:0 !important;
+}
 .category-title{
     color: $main-color; 
     font-size:3em; 
     text-align:right; 
-    background: url('/assets/category/pink_leaf.jpg') no-repeat center center; 
+    background: url('/assets/violet-space-galaxy.jpg') no-repeat top left; 
+    background-size:100% auto; 
     @include respond-to('small'){
-     min-height:25%; 
-     background: url('/assets/category/pink_leaf_half.jpg') no-repeat center center; 
+     
+     background: url('/assets/violet-space-galaxy.jpg') no-repeat top left; 
     } 
-    background-size:100% auto !important; 
     white-space:normal; 
     word-break:keep-all; 
     div{
-        min-height:40%; 
-        background-color: #ffffffbd;
+        min-height:50%; 
+        background: linear-gradient(to top, rgba(255,255,255,1),rgba(255,255,255,0.1)); 
         position:relative; 
+        background-size:100% 101%; 
         padding:2em 0.3em 0.3em 0.3em; 
         @include respond-to('small'){
-         min-height:25%; 
+             min-height:26%; 
+             background-size:100% 101%; 
         } 
     }
     h2{

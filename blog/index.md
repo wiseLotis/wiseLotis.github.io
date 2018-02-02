@@ -13,7 +13,7 @@ layout: home
 			<div class="container">
 				<div class="head-title">
 					<div class="category">
-					<a href="/posts/{{post.categories[0]}}"><span>{{post.categories[0]}}</span></a>
+					<a href="/posts/{{post.categories[0]}}" data-toggle="tooltip" data-placement='top' title='{{post.categories[0]}}로 이동합니다.' ><span>{{post.categories[0]}}</span></a>
 				</div>					<div class=''>
 <!-- -->
 						<h2>{{post.title}}</h2>

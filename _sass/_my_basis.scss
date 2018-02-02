@@ -65,6 +65,10 @@ $breakpoints: (
 		font-family: 'daumFont', normal !important;
 		font-weight: 400 !important; 
 		color: $fc-color;
+			font-size:14px; 
+		@include respond-to('small'){
+        	font-size:10px;
+   		}
 	}
 
 	/*link*/
@@ -144,6 +148,7 @@ $breakpoints: (
 		width: 100%;
 		z-index:100000;
 		margin-bottom:0px !important;
+		box-shadow: 0 5px 5px -5px $main-color; 
  
 	}
 
@@ -184,12 +189,12 @@ $breakpoints: (
 		}
 	}
 	.sidebar{
+		font-size:1rem;
 		@media screen and (min-width: 600px) {
 			&{
 				position:fixed; 
 			}
 		}
-
 		.category{
 
 		}
@@ -209,7 +214,7 @@ $breakpoints: (
 		width: 100%;
 		background-color:$main-color;
 		color:#ffffff;
-		font-size:13px;
+		font-size:0.9rem;
 		@include respond-to('small'){
 			position: absolute;
 			bottom: -120px;

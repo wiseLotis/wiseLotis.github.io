@@ -13,7 +13,7 @@
  			margin-bottom:10px; 
  			text-align:right; 
  			.btn{
- 				font-size:12px; 
+ 				font-size:0.8rem; 
  				color:$sub-color !important; 
  				border:1px solid; 
  			}
@@ -37,26 +37,33 @@
    		justify-content: space-between; -webkit-justify-content: space-between; /* Safari 6.1+ */ -ms-justify-content: space-between;
 		background-color:#ffffff;
 		padding:0.5em; 
+		flex-wrap:wrap; 
 		.half_area{
-			width:50%; 
-			 
+			width:49%; 
 			padding:0.5em;
+			@include respond-to('medium'){
+				width:100%; 
+			}
 		}
+
 	}
 
  	.content{
-
+		font-size:0.9rem; 
  		padding: 2em 1em; 
  		background-color:#ffffffe3;
  		ol{
  			padding-left:2em;
  		}
  		.page-heading {
- 			font-size: 20px;
+ 			font-size: 1.5rem;
  		}
  		.postbody{
  			padding: 1.5em 1em; 
  			background-color:$base-color; 
+ 			h2{	
+				font-size:2em;
+ 			}
  			img{
  				box-shadow: 0 0 5px 5px $mute-sub-color;
  				margin: 2em 1em;
@@ -72,36 +79,30 @@
  		}
 
  		.post-meta {
- 			font-size: 14px;
+ 			font-size: 1em;
  			color: #828282;
  		}
 
  		.post-link {
  			display: block;
- 			font-size: 24px;
+ 			font-size: 1.8em;
  		}
 
  		.post-header {
- 			margin-bottom: 30px
+ 			margin-bottom: 30px;
  		}
 
 
  		.post-title {
- 			font-size: 42px;
+ 			font-size: 2.5em;
  			letter-spacing: -1px;
- 			line-height: 1;
- 			@include respond-to('medium'){
- 				font-size:36px; 
- 			}
+ 			line-height: 1; 
  		}
 
  		.post-content{
  			padding: 30px 0;
  			margin-bottom: 30px;
- 			font-size: 14px; 
- 			@include respond-to('medium'){
- 				font-size:10px; 
- 			}
+ 			font-size: 1em;  
  		}
  		.tagWrapper{
  			text-align:right;
