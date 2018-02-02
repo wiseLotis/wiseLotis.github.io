@@ -23,8 +23,8 @@ js(Javascript: 편의상 js라고 작성 하겠다.) 로 코딩을 하다보면 
 <br> 내가 목표로 하고 있는건 그저 그런 개발자가 아니므로  *this를 제대로 마주하고 싶어졌다.*  
 <br>
 
-
-우선 어떤 함수를 호출하면 활성화 레코드  즉 실행 콘텍스트가 생성 된다 <br>
+우선 함수의 실행 과정을 알아 보자. 
+ 어떤 함수를 호출하면 활성화 레코드  즉 실행 콘텍스트가 생성 되고 실행 콘텍스트가 call-stack 에 쌓인다. <br>
 실행콘텍스트는  *실행 가능한 자바스크립트 코드가 실행되는 환경* 로 자바스크립트 엔진이 코드를 실행하기 위해 필요한 여러가지 정보가 들어있다. <br>
 ( js는  단일 스레드 단일 동시 언어로, 한번에 하나의 작업만 할 수 있다. 그래서 call-stack이라고 하는 실행 컨텍스트가 쌓이는 호출 스택을 가지고 있다. )<br>
 
@@ -48,26 +48,25 @@ js(Javascript: 편의상 js라고 작성 하겠다.) 로 코딩을 하다보면 
 
 [PoiemaWeb](http://poiemaweb.com/js-execution-context)에 쉽고 자세하게 설명 되어있으니 참고 <br>
 실행 컨텍스트의 순서는 내가 찾아 본 여러 포스트에서 조금씩 달랐다. 해석의 문제인가.. <br>
-어떤 책에 실행 콘텍스트에 call-stack이 포함되어 있다고도 적혀있다... <br>
-개인적으로 찾아 보고 나중에 포스팅 해야겠다.  <br>
+각설하고.. 다시 this로 돌아와서<br>
 
-뭐 다른 이야기는 각설하고.. 다시 this로 돌아오자면 <br>
-this는 작성 시점이 아닌 런타임 시점에 *함수 호출 당시 상황(언제 어떻게 호출했는가?)*에 따라 결정 된다.<br>
-
-위의 과정을 이해 해야 <br>
-this 바인딩에 대해서 알 수 있기 때문에 이렇게 서두가 길어져 버렸다 . <br>
+호출시 일어나는 일들을 이해 해야 <br>
+this 바인딩에 대해서 이해하기 쉽기 때문에 살짝 옆길로 새는 것 같지만 실행 콘텍스트에 대해서 알아보았다.  <br>
 ( 어디까지 적어야 하느냐가 정말 어려운것 같다. ) <br>
 
-바인딩의 종류는 아래와 같다 . <br>
+실행 콘텍스트 순서를 보면 알 수 있듯이 this는 작성 시점이 아닌 런타임 시점에 *함수 호출 당시 상황(언제 어떻게 호출했는가?)*에 따라 결정 된다.<br>
+함수 홏출 당시 상황에 따라 바인딩의 종류가 결정 되고 바인딩의 종류는 아래와 같아. <br> 
 
-1. 기본 바인딩  < 
-2. 암시적 바인딩 < 
+
+1. 기본 바인딩  
+2. 암시적 바인딩  
 3. 명시적 바인딩 ( 하드 바인딩 )  
 4. new 바인딩 
 
+
 #### 1. 기본 바인딩 
 
-'단독함수 실행'에 관한 규칙으로 나머지 규칙에 해당하지 않을 경우 적용되는 *기본규칙*이다 <br>
+'단독함수 실행'에 관한 규칙으로 나머지 규칙에 해당하지 않을 경우 적용되는 *기본규칙* 이다. <br>
 
 {% highlight ruby %}
 function introduce(){
@@ -76,52 +75,60 @@ console.log('my name is '+this.name);
 var name = 'jenny'; 
 introduce(); 
 {% endhighlight %}<br>
-위 code의 결과는 당연히 my name is jenny 이다. <br>
-변수 a와 함수 foo()는 전역 VO에 선언되어 있다. this 는 기본바인딩 되어 전역 객체를 참조한다. <br>
 
-* 엄격 모드 * 의 경우 전역 객체가 기본 바인딩 대상에서 제외 된다 <br>
+결과: >> my name is jenny 이다. <br>
+this.name = jenny 가 된다. <br> 
+변수 a와 함수 foo()는 전역 VO에 선언되어 있고 this 는 기본바인딩 되어 전역 객체를 참조한다. <br>
+
+
 {% highlight ruby %}
 function introduce(){
 "use strict"; 
 console.log('hi, my name is '+this.name); 
 }
 var name = 'jenny'; 
-introduce(); // type <error></error>
+introduce(); 
 {% endhighlight %}<br>
+ 
+결과: Uncaught TypeError: Cannot read property 'name' of undefined
 
-foo() 호출 부의 엄격 모드 여부와는 상관이 없다 .  <br>
+* 엄격 모드 * 의 경우 *전역 객체가 기본 바인딩 대상에서 제외* 되므로 undefined 된 상태이다.  
+따라서 this.name 은 undefined이다. <br>
+참고로 foo() 호출 부의 엄격 모드 여부와는 상관이 없다 .  <br>
 
 
 #### 2. 암시적 바인딩
 
 
-호출부에 콘텍스트 객체가 있는지, 객체의 소유/ 포함 여부를 확인하는 것이다. <br>
-즉, 실행 콘텍스트의 DO에 있는지 여부를 확인 한다. <br>
-함수 레퍼런스에 대한 콘텍스트 객체가 존재할 때 암시적 바인딩 규칙에 따라 이 콘텍스트 객체가 함수 호출 <br>
+호출부에 콘텍스트 객체가 있는지, 객체의 소유/ 포함 여부를 확인하는 것이다. <br> 
+함수 레퍼런스에 대한 콘텍스트 객체가 존재할 때 암시적 바인딩 규칙에 따르게 된다. <br>
 
 {% highlight ruby %}
 function introduce(){
+debugger; 
 console.log('hi, my name is '+this.name); 
 }
-var jenny = {
+var jenny = { 
 name: 'jenny',
 friend:lisa
 }
-var lisa = {
+var lisa = { 
 name: 'lisa', 
 introduce: introduce
 }
 
-name: 'suji'
-jenny.friend.introduce(); // hi, my name is lisa
-
+name: 'jisoo'
+jenny.friend.introduce(); 
 {% endhighlight %}
 
 <br>
  
-introduce(jenny.introduce); 이면 hi, my name is jenny  전역에서 호출을 했어도, suji가 아닌 jenny다. 호출 했을때  호출 시점에 객체 레퍼런스가 준비 되어 있으므로 jenny가 this에 바인딩 될것이다. 이것을 암시적 바인딩이라고 한다.  <br>
- introduce 함수의 실행 콘텍스트 생성 시 this에 바인딩  되므로 <br>  
-jenny.friend.introduce(); 의 결과는 hi, my name is lisa 가 된다. <br>
+*결과: hi, my name is lisa*
+
+this.name은 전역의 jisoo도 아닌 jenny의 jenny도 아닌 jenny의 friend가 가리키고 있는 lisa의 lisa가 된다 
+호출 했을때  호출 시점에 객체 레퍼런스가 준비 되어 있으므로 lisa가 this에 바인딩 될것이다. 이것을 암시적 바인딩이라고 한다.  <br>
+jenny.friend.introduce는 lisa.introduce를 가리킬 뿐이다.  lisa.introduce 호출 시 에 이미 컨텍스트에 name이 준비되어 있으므로 암시적 바인딩 규칙이 적용되어 this.name이 lisa가 된다. 
+
 
 
 {% highlight ruby %}
@@ -135,15 +142,18 @@ function says(fn){
 
 var jenny = {
 	name : 'jenny', 
-	says: introduce
+	introduce : introduce
 }
 var name ='jisoo'; 
 
-says(jenny.says); //hi, my name is jisoo !!!! 
+says(jenny.introduce); 
 
 {% endhighlight %}
 
-위의 예제와 비교해 보면 정말 아리송 하게 만드는 결과가 나온다 결과는 'hi. my name is  jisso'  이를 암시적 소실이라고 한다. 
+*결과: hi, my name is jisoo*
+
+암시적 바인딩 규칙이 적용 되어 this.name 이 jenny일것 같지만 콜백 함수의 this에는 전역 객체가 바인딩 되어 this.name 이 jisoo가 된다. 
+이를 암시적 소실이라고 한다. 
 인자로 함수를 넘기면 암시적으로 레퍼런스가 할당된다. 
 내장 함수를 사용할 경우 위와 같은 현상이 일어남. 
 위의 코드를 실행하면 실제로 hi 콘텍스트 생성 시 this가 window 객체로 바인딩 된다 (엄격 모드일 경우 undefined)

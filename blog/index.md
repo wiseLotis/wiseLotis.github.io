@@ -5,7 +5,6 @@ layout: home
 ---
 
 <link rel="stylesheet" href="/css/home.css"/>
-
 <div class="">
 	<div class="row">
 		{% if site.tags['headpost'] %}
@@ -69,7 +68,6 @@ layout: home
 		</div>
 	</div>
 </div>
-
 
 
 

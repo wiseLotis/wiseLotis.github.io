@@ -1,9 +1,4 @@
  @charset "UTF-8";
- body{
- 	background:url('/assets/back_bottom_leaf.jpg') repeat-x bottom left; 
- 	background-size: auto 300px; 
- }
-
  .content-wrapper{
  	white-space:normal; 
  	word-break:break-all; 
@@ -13,9 +8,41 @@
  	    background-size: 100% auto; 
  	    */
  	}
+ 	.select_container{
+ 		.btn_area{
+ 			margin-bottom:10px; 
+ 			text-align:right; 
+ 			.btn{
+ 				font-size:12px; 
+ 				color:$sub-color !important; 
+ 				border:1px solid; 
+ 			}
+ 			.btn.active{
+ 				color:#ffffff !important; 
+ 				background-color:$sub-color; 
+ 			}
+ 		}
+ 		.box_area{
+ 			.box{
+ 				display:none;
+ 			}
+ 		}
+ 	}
  	.sidebar_wrapper{
  		background-color:#ffffff; 
  	}
+	.ex-container{
+		width: 100%;
+		display:flex;    display:-webkit-flex;    display:-ms-flex;
+   		justify-content: space-between; -webkit-justify-content: space-between; /* Safari 6.1+ */ -ms-justify-content: space-between;
+		background-color:#ffffff;
+		padding:0.5em; 
+		.half_area{
+			width:50%; 
+			 
+			padding:0.5em;
+		}
+	}
 
  	.content{
 
@@ -29,7 +56,7 @@
  		}
  		.postbody{
  			padding: 1.5em 1em; 
- 			background-color:$mute-main-color; 
+ 			background-color:$base-color; 
  			img{
  				box-shadow: 0 0 5px 5px $mute-sub-color;
  				margin: 2em 1em;

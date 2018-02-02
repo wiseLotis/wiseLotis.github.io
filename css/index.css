@@ -20,8 +20,12 @@ body{
 	-webkit-align-items: center;
 	-ms-flex-align: center;
 	align-items: center;
-	background-color:#ff6f6f;
+	background: url('/assets/ultra-violet-night-sky.jpg') top center;
+	background-repeat: no-repeat;
+	background-size:100% 100%;  
 }
+
+
 .maintext{
 	font-family: 'Libre Barcode 39 Extended Text', cursive;
 	font-size:45px;
@@ -39,7 +43,13 @@ a:visited{
 	color:#ffffff !important;
 }
 @media screen and (max-width: 800px) {
+	body{
+		background:none;
+		background-color: #604c8d;
+		padding:1em;
+	}
 	.maintext{
+		text-indent:1em;
 		font-family: 'Permanent Marker', cursive;
 	}
 } 

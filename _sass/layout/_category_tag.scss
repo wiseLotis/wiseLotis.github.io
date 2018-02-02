@@ -73,7 +73,7 @@ body{
         &>a:hover{
             color: $dark-fc-color !important;
             text-decoration: none;
-            background-color: $hover-color;
+            background-color: $base-color;
             border-bottom:1px solid $main-color; 
         }
         .post-title{
