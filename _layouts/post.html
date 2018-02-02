@@ -1,42 +1,40 @@
 <html>
 <head>
-<link href="/css/post.css" rel="stylesheet">
+  <link href="/css/post.css" rel="stylesheet">
   {% include includes.html %}
 </head>
 <body style="padding-top:60px;"> 
   {% include header.html %}
   <div class="">
-  <div class="row">
-  <div class="col-sm-3 sidebar_wrapper">
-  <div class="sidebar">
-  {% include side_bar.html %}
-  </div>
-</div>
-<div class="col-sm-9 content-wrapper" style="border-top: 1px solid #f1f1f1 ">
-  <div class="content">
-    <h2 class="post-title">{{page.title}}</h2>
-        <p class="muted">{{page.date | date: '%B %d, %Y'}}</p>
-      <div class="postbody">
-        {{content}}
-        <br>
-              <div class="tagWrapper">
+    <div class="row">
+      <div class="col-sm-3 sidebar_wrapper">
+        <div class="sidebar">
+          {% include side_bar.html %}
+        </div>
+      </div>
+      <div class="col-sm-9 content-wrapper" style="border-top: 1px solid #f1f1f1 ">
+        <div class="content">
+          <h2 class="post-title">{{page.title}}</h2>
+          <p class="muted">{{page.date | date: '%B %d, %Y'}}</p>
+          <div class="postbody">
+            {{content}}
+            <br>
+            <div class="tagWrapper">
               {% for tag in page.tags %} {% if tag !="home" and tag !="headpost" %}
               <span class="post-tag"><a href="/tags/{{tag}}" class='basic'>{{ tag }}</a></span> {% endif %}
               {% endfor %}
-            </div>
-        <!-- --></div>
-    </div>
+            </div> 
+          </div>
         <br>
+        {% if page.comments %}
+        <div class="MT20 comments-wrapper">
+          {% include comments.html %}
+        </div>
+        {% endif %}
       </div>
-
-    {% if page.comments %}
- <div class="MT20 comments-wrapper">
-     {% include comments.html %}
-  </div>
-  {% endif %}
+    </div>
   </div>
 </div>
-</div>
- {% include footer.html %}
+{% include footer.html %}
 </body>
 </html>
