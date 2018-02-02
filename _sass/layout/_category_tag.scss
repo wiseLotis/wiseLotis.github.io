@@ -24,7 +24,6 @@ body{
     background: url('/assets/violet-space-galaxy.jpg') no-repeat top left; 
     background-size:100% auto; 
     @include respond-to('small'){
-     
      background: url('/assets/violet-space-galaxy.jpg') no-repeat top left; 
     } 
     white-space:normal; 
