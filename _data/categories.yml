@@ -12,7 +12,7 @@
   subcategories:  
     - name: frontend
       desc: html, javascript, jquery, css, view....  
-      permalink: /posts/frontend/
+      permalink: /posts/frontend
 
     - name: java 
       desc: java
