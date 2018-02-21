@@ -5,7 +5,7 @@ slug: "python-01-start"
 subtitle: ""
 description: "왜 python인가?"
 date: 2018-01-24
-categories: python 
+categories: python tech
 google: true 
 tags: [python]
 comments: true

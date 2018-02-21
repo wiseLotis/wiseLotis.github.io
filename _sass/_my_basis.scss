@@ -183,7 +183,7 @@ $breakpoints: (
 			margin-bottom:0px;
 		}
 	}
-	.col-sm-3.sidebar_wrapper{
+	.sidebar_wrapper{
 		@include respond-to('small'){
 			display:none; 
 		}

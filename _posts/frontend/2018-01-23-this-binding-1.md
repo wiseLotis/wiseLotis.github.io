@@ -4,7 +4,7 @@ title:  "this 바인딩"
 subtitle: "this 마주보기"
 slug: "this-binding-1" 
 description: "this란 무엇인가? "
-categories: frontend
+categories: frontend tech
 google: true 
 tags: [js, home]
 comments: true 

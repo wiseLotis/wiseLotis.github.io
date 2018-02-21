@@ -44,7 +44,7 @@ layout: home
 		<ul class="home-postlist full_area">
 				
 {% endif %}
-			{% for post in site.tags["home"] %}
+			{% for post in site.tags["home"] limit:5 %}
 	<li>
 <!-- --> <div class="post-wrapper basic">
 						<a href='{{post.url}}'>

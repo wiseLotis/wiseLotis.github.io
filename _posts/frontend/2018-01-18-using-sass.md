@@ -4,7 +4,7 @@ title:  "sass 이용하기"
 subtitle: ""
 slug: "using_sass" 
 description: "멋지고 간편하게 css작성하기"
-categories: frontend
+categories: frontend tech
 google: true 
 tags: [css, sass, home]
 comments: true
