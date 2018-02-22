@@ -1,0 +1,39 @@
+// execl macro 
+
+Sub toJsonData()
+Dim i As Integer
+Dim j As Integer
+Dim nameRow As Integer
+Dim lastRow, lastCol
+Dim jsonText
+nameRow = 2
+i = nameRow + 1
+j = 1
+lastRow = Cells(Rows.Count, 1).End(xlUp).Row
+lastCol = Cells(nameRow, Columns.Count).End(xlToLeft).Column
+
+
+Do While i < lastRow + 1
+    j = 1
+    jsonText = "{"
+    Do While j < lastCol + 1
+        If j > 1 Then
+        jsonText = jsonText + ","
+        End If
+        
+        Dim text
+        text = """" & Cells(nameRow, j) & """" & ":" & """" & Cells(i, j) & """"
+        jsonText = jsonText + text
+        j = j + 1
+    Loop
+    jsonText = jsonText + "}"
+    
+    If i < lastRow Then
+    jsonText = jsonText + ","
+    End If
+    
+    Cells(i, lastCol + 1).Value = jsonText
+       
+    i = i + 1
+Loop
+End Sub 
