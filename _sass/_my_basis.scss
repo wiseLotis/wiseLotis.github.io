@@ -127,7 +127,7 @@ $breakpoints: (
 			text-decoration: none;   
 		}
 		&.navlink {
-			color:rgba(255,255,255,0.7); 
+			color:rgba(255,255,255,1); 
 			border-bottom: 4px solid rgba(255,255,255,0.5); 
 		}
 		.navitem.active &.navlink, .blog_name &{
@@ -164,6 +164,7 @@ $breakpoints: (
 	 .mynav{
 	  	position:relative; 
 	 	width:100%; 
+	 	height:70%; 
 	 	min-height:300px; 
 	 	z-index:100; 
 	 	top:0px; 
@@ -171,7 +172,7 @@ $breakpoints: (
 	 	.logo_box{
 	 		position:absolute; 
 	 		top:10px; 
-			right: 10px; 
+			left: 10px; 
 			.logo{
 				display:inline-block; 
 				width:40px; 
@@ -192,7 +193,7 @@ $breakpoints: (
 	 		text-align:right; 
 	 		.blog_name{
 	 			font-size:40px; 
-	 			margin-bottom: 10px; 
+	 			margin-bottom: 20px; 
 	 		}
 	 		.navlist_box{
 				ul{
