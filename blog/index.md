@@ -3,6 +3,22 @@ title: wiseLotis
 permalink: /blog/
 layout: home
 ---
+<script>
+	$(document).ready(function(){
+		$(".navbar").addClass("uptop inverse"); 
+	}); 
+	$(document).scroll(function(){
+ 		if($(this).scrollTop() > 100 ){
+  			if($(".navbar").hasClass("uptop")){
+				$(".navbar").removeClass("inverse uptop");
+			}
+		}else{
+			if(!$(".navbar").hasClass("uptop")){
+				$(".navbar").addClass("inverse uptop"); 	
+			}
+		}
+	})
+</script>
 
 <link rel="stylesheet" href="/css/home.css"/>
 <div class="">
@@ -68,7 +84,6 @@ layout: home
 		</div>
 	</div>
 </div>
-
 
 
 <!-- <div class="col-sm-4 homelist-wrapper">

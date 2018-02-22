@@ -69,8 +69,9 @@ $breakpoints: (
 		@include respond-to('small'){
         	font-size:10px;
    		}
-	}
 
+	}
+	
 	/*link*/
 	a, a:-webkit-any-link {
 		color: $dark-fc-color;
@@ -89,6 +90,12 @@ $breakpoints: (
 			cursor: pointer;
 			text-decoration: underline;
  		}
+ 		&.navlink{
+			color:rgba(255,255,255,0.7); 
+		}
+		.navitem.active &.navlink, .blog_name &{
+			color:#ffffff; 
+		} 
 	}  
 
 	a:hover, a:focus{
@@ -100,6 +107,9 @@ $breakpoints: (
 		.inverse &, &.inverse{
 			color: $dark-fc-color !important;
 		} 
+		.navbar-nav .dropdown-menu &{
+			color: $dark-fc-color !important;
+		}
 		.navbar &{
 			color: $sub-color !important;
 			text-decoration: underline;
@@ -116,6 +126,13 @@ $breakpoints: (
 			color: #d14;
 			text-decoration: none;   
 		}
+		&.navlink {
+			color:rgba(255,255,255,0.7); 
+			border-bottom: 4px solid rgba(255,255,255,0.5); 
+		}
+		.navitem.active &.navlink, .blog_name &{
+			color:#ffffff; 
+		} 
 	}
 
 	a:visited {
@@ -133,10 +150,88 @@ $breakpoints: (
 		}
 		.site-footer &{
 			color: rgba(255,255,255,0.5);
+		} 
+		
+		&.navlink{
+			color:rgba(255,255,255,0.7); 
 		}
-	} 
- 
+		.navitem.active &.navlink, .blog_name &{
+			color:#ffffff; 
+		} 
 
+	} 
+
+	 .mynav{
+	  	position:relative; 
+	 	width:100%; 
+	 	min-height:300px; 
+	 	z-index:100; 
+	 	top:0px; 
+	 	background: url("/assets/violet-space-galaxy.jpg"); 
+	 	.logo_box{
+	 		position:absolute; 
+	 		top:10px; 
+			right: 10px; 
+			.logo{
+				display:inline-block; 
+				width:40px; 
+				img{
+					background-color: $main-color;
+	    			padding: 10%;
+	    			border-radius:10px;
+				}
+			}
+	 	}
+	 	.title_box{
+	 		color:#ffffff !important; 
+	 		position:absolute;
+	 		bottom: 5%;  
+	 		right:5%;
+	 		width: 95%; 
+	 		font-size: 18px; 
+	 		text-align:right; 
+	 		.blog_name{
+	 			font-size:40px; 
+	 			margin-bottom: 10px; 
+	 		}
+	 		.navlist_box{
+				ul{
+					display:flex; 
+					flex-wrap: wrap; 
+					flex-direction: row-reverse; 
+					margin:auto; 
+					@include respond-to('small'){
+						    flex-direction: column-reverse;
+					}
+					li.navitem{
+						margin-left: 15px;  
+						padding:0 5px; 
+						text-align:right; 
+						position:relative; 
+						@include respond-to('small'){
+							min-width:200px; 
+						}
+						.drop_navlist{
+							display:inline-flex;   
+							.drop_navitem{
+								margin-left: 15px;  
+								padding:0 5px; 
+								font-size: 0.8em; 
+							}
+						}
+						a.navlink{
+							display:inline-block; 
+						}
+						&.active>a{
+							border-bottom: 4px solid rgba(255,255,255,0.5); 
+						}  
+					}
+				}
+	 		}
+	 	}
+	 }
+	 
+	
 	.navbar{
 		border-radius:0px !important; 
 		margin-top: 10px;
@@ -149,10 +244,30 @@ $breakpoints: (
 		z-index:100000;
 		margin-bottom:0px !important;
 		box-shadow: 0 5px 5px -5px $main-color; 
+		font-size:17px;
  
 	}
-
+	
+	.navbar.uptop{
+		border-radius:0px !important; 
+		margin-top: 10px;
+		top: -10px;
+		position: fixed !important;
+		background-color: transparent !important;
+		border-bottom: none !important;
+		color:#ffffff !important;
+		width: 100%;
+		z-index:100000;
+		margin-bottom:0px !important;
+		box-shadow: none; 
+		.navbar-nav .dropdown-menu{
+		position: static;
+    	float: none;
+    	background-color: transparent;
+		}
+	}
 	.navbar-brand{
+		margin-bottom: auto; 
 		&.has-logo{
 			padding:7px !important;
 		}
@@ -165,6 +280,9 @@ $breakpoints: (
 
 	.navbar-toggler{
 		&.custom{
+			.inverse &{
+				color: #ffffff !important; 
+			}
 			width: 50px;
 			color:$main-color;
 			border-radius: 5px;
@@ -173,6 +291,9 @@ $breakpoints: (
 		}
 		.toggle-stick{
 			background-color:$main-color;
+			.inverse &{
+				background-color:#ffffff !important; 
+			}
 			display: block;
 			height: 2px;
 			width: 80%;
@@ -189,12 +310,7 @@ $breakpoints: (
 		}
 	}
 	.sidebar{
-		font-size:1rem;
-		@media screen and (min-width: 600px) {
-			&{
-				position:fixed; 
-			}
-		}
+		font-size:1rem; 
 		.category{
 
 		}
@@ -393,7 +509,6 @@ $breakpoints: (
  /* overriding */
  body{
  	position:relative;
- 	padding-top:60px !important; 
  	padding-bottom: 200px !important;
  	@include respond-to('small'){
  		padding-bottom: 50px !important; 
@@ -558,4 +673,5 @@ $breakpoints: (
     margin-top: 1em;
     border-radius: 5px
  }
-
+ 
+ 

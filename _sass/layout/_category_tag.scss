@@ -30,7 +30,6 @@ body{
     word-break:keep-all; 
     div{
         min-height:70%; 
-        background: linear-gradient(to top, rgba(255,255,255,1),rgba(255,255,255,0.1)); 
         position:relative; 
         background-size:100% 101%; 
         padding:2em 0.3em 0.3em 0.3em; 
@@ -42,6 +41,7 @@ body{
     h2{
         bottom: 1px;
         right: 1em;
+        color:#ffffff; 
         font-size: inherit;
         position: absolute;
    }

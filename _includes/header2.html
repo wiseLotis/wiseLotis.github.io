@@ -1,39 +1,6 @@
-<nav class="mynav">
-<div class="logo_box">
-  <a class="logo {% if site.logo %} has-logo {% endif %}" href="/">{% if site.logo %} <img src="{{ site.logo | prepend: site.url }}"/> {% else %} wiseLotis {% endif %}</a>
-</div>
 
-<div class="title_box">
-  <h2 class='blog_name'><a href="/blog">WiseLotis</a>:)<span class="title"></span></h2>
-  <div class="navlist_box">
-  <ul class="navlist">
-    <li class="navitem">
-      <a class="navlink" href="{{site.github}}">github</a>
-    </li>
-   <!--  <li class="navitem">
-     <a class="navlink" href="/about">about</a>
-   </li> -->
-    {% for category in site.data.categories | reverse %}
-     {% if category.disable == nil %}
-          <li class="navitem">
-            <a class="navlink" href="{{category.permalink}}">{{category.name}}</a>
-          </li>  
-     {% endif %}
-    {% endfor %}
-    <li class="navitem" data-name="wiseLotis">
-      <a class="navlink" href="/blog"> BlogHome </a>
-    </li> 
-    <!-- <li class="nav-item">
-      <a class="nav-link disabled" href="#">Disabled</a>
-    </li> -->
-  </ul>
-</div>
-</div>
-
-</nav>
-<!-- 
 <nav class="navbar navbar-expand-lg">
- <a class="navbar-brand {% if site.logo %} has-logo {% endif %}" href="/blog">{% if site.logo %} <img src="{{ site.logo | prepend: site.url }}"/> {% else %} wiseLotis {% endif %}</a>
+ <a class="navbar-brand {% if site.logo %} has-logo {% endif %}" href="/">{% if site.logo %} <img src="{{ site.logo | prepend: site.url }}"/> {% else %} wiseLotis {% endif %}</a>
  <button class="navbar-toggler custom" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
   <span class="toggle-stick"></span> 
   <span class="toggle-stick"></span> 
@@ -69,16 +36,17 @@
         {% endif %}
       {% endif %}
     {% endfor %}
-    <li class="nav-item">
+    <!--   <li class="nav-item">
       <a class="nav-link disabled" href="#">Disabled</a>
-    </li>
+    </li> -->
   </ul>
-  <div class="" style="padding:0 20px;">
+  <!-- <div class="" style="padding:0 20px;">
    <form class="form-inline my-2 my-lg-0">
    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
    </form> 
- </div>
-<a class="nav-link TXTR" href="/about/">about</a>
+ </div> -->
+<!--  <a class="nav-link TXTR" href="/about/">about</a>
+-->
 </div>
-</nav> -->
+</nav>
