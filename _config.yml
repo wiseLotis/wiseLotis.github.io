@@ -20,9 +20,9 @@ description:
 # baseurl: "" # the subpath of your site, e.g. /blog
 # url: "http://127.0.0.1:4000/" # the base hostname & protocol for your site, e.g. http://example.com
 url: "https://wiselotis.github.io/"
-baseurl: "https://wiselotis.github.io/"
+baseurl: "https://wiselotis.github.io/" 
 # twitter_username: 
-# github_username:  wiseLotis
+github_username:  wiseLotis
 github : "https://github.com/wiseLotis/wiseLotis.github.io"
 cover: "/assets/main.jpg"
 logo: "/assets/logo_white.png"
