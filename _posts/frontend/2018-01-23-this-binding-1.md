@@ -1,4 +1,4 @@
----
+R---
 layout: post
 title:  "this 바인딩"
 subtitle: "this 마주보기"

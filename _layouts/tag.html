@@ -4,6 +4,12 @@
   {% include includes.html %}
 </head>
 <body> 
+  <script>
+  $(document).ready(function(){
+     $(".navitem").removeClass("active"); 
+    $(".navitem").filter("[data-name='tags']").addClass("active"); 
+  })
+</script>
   {% include header.html %}
   <div class="">
     <div class="row">

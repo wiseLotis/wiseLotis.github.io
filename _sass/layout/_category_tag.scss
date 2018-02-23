@@ -21,10 +21,10 @@ body{
     color: $main-color; 
     font-size:3em; 
     text-align:right; 
-    background: url('/assets/violet-space-galaxy.jpg') no-repeat top left; 
+    background: url('/assets/violet-space-galaxy.jpg') no-repeat center center; 
     background-size:100% auto; 
     @include respond-to('small'){
-     background: url('/assets/violet-space-galaxy.jpg') no-repeat top left; 
+     background: url('/assets/violet-space-galaxy.jpg') no-repeat center; 
     } 
     white-space:normal; 
     word-break:keep-all; 

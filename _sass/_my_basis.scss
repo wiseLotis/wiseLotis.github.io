@@ -169,6 +169,10 @@ $breakpoints: (
 	 	z-index:100; 
 	 	top:0px; 
 	 	background: url("/assets/violet-space-galaxy.jpg"); 
+	 	background-size: 100% auto; 
+	 	@include respond-to('small'){
+		background-size: auto 100%; 
+		}
 	 	.logo_box{
 	 		position:absolute; 
 	 		top:10px; 
@@ -197,20 +201,18 @@ $breakpoints: (
 	 		}
 	 		.navlist_box{
 				ul{
-					display:flex; 
-					flex-wrap: wrap; 
-					flex-direction: row-reverse; 
+					display:inline-flex; 
+					flex-flow: row wrap; 
 					margin:auto; 
 					@include respond-to('small'){
-						    flex-direction: column-reverse;
+					    flex-flow: column wrap-reverse;
 					}
 					li.navitem{
 						margin-left: 15px;  
 						padding:0 5px; 
 						text-align:right; 
 						position:relative; 
-						@include respond-to('small'){
-							min-width:200px; 
+						@include respond-to('small'){  
 						}
 						.drop_navlist{
 							display:inline-flex;   
@@ -429,6 +431,7 @@ $breakpoints: (
  * Code formatting
  */
  pre, code {
+ 	padding: 1em; 
  	font-size: 15px;
  	border: 1px solid #e8e8e8;
  	border-radius: 3px;

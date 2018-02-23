@@ -88,7 +88,7 @@ sitemap :
 여기서 주의 할 점!! <br>
 포스트의 프론트 작성시 아래와 같은 에러가 나올 수 있다. 
  <br>
-![](/assets/posts_con/etc/google-search_img6.png)
+![image](/assets/posts_con/etc/google-search_img6.png)
 
 <div class="error_box"> 
 	 Error: YAML Exception reading c:/SUUU/blog/wiseLotis.github.com/_posts/2018-01-18-using-sass.md:: found character that cannot start any token while scanning for the next token at line 13 column 1

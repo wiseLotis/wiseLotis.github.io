@@ -7,9 +7,10 @@
   <h2 class='blog_name'><a href="/blog">WiseLotis</a>:)<span class="title"></span></h2>
   <div class="navlist_box">
   <ul class="navlist">
-    <li class="navitem">
-      <a class="navlink" href="{{site.github}}">github</a>
-    </li>
+      
+<li class="navitem active" data-name="wiseLotis">
+      <a class="navlink" href="/blog"> Home </a>
+    </li> 
    <!--  <li class="navitem">
      <a class="navlink" href="/about">about</a>
    </li> -->
@@ -20,9 +21,13 @@
           </li>  
      {% endif %}
     {% endfor %}
-    <li class="navitem active" data-name="wiseLotis">
-      <a class="navlink" href="/blog"> BlogHome </a>
+     
+     <li class="navitem" data-name="tags">
+      <a class="navlink" href="/tags/"> tags </a>
     </li> 
+     <li class="navitem">
+      <a class="navlink" href="{{site.github}}">github</a>
+    </li>
     <!-- <li class="nav-item">
       <a class="nav-link disabled" href="#">Disabled</a>
     </li> -->

@@ -10,6 +10,12 @@ title: Tags
    }
 </style>
 </head>
+<script>
+  $(document).ready(function(){
+     $(".navitem").removeClass("active"); 
+    $(".navitem").filter("[data-name='tags']").addClass("active"); 
+  })
+</script>
 <link href="/css/category_tag.css" rel="stylesheet">
   <div class="row">
     <div class="col-sm-3 MT30">
