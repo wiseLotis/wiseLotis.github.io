@@ -1,4 +1,4 @@
- @charset "UTF-8";
+  @charset "UTF-8";
  .content-wrapper{
  	white-space:normal; 
  	word-break:break-all; 
@@ -65,9 +65,9 @@
 				font-size:2em;
  			}
  			img{
- 				box-shadow: 0 0 5px 5px $mute-sub-color;
- 				margin: 2em 1em;
- 				max-width: 90%;
+ 				box-shadow: 0 0 2px 1px $mute-sub-color;
+		    	margin: 1em 10% 1em 10%;
+			    width: 80%;
  			}
  		}
  		.post-list {
