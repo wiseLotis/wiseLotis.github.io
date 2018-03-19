@@ -3,23 +3,6 @@ title: wiseLotis
 permalink: /blog/
 layout: home
 ---
-<script>
-	$(document).ready(function(){
-		$(".navbar").addClass("uptop inverse"); 
-	}); 
-	$(document).scroll(function(){
- 		if($(this).scrollTop() > 100 ){
-  			if($(".navbar").hasClass("uptop")){
-				$(".navbar").removeClass("inverse uptop");
-			}
-		}else{
-			if(!$(".navbar").hasClass("uptop")){
-				$(".navbar").addClass("inverse uptop"); 	
-			}
-		}
-	})
-</script>
-
 <link rel="stylesheet" href="/css/home.css"/>
 <div class="">
 	<div class="row">
@@ -42,11 +25,12 @@ layout: home
 					<div class="head-image">
 						<img src="{% if post.image %} {{post.image}} {% else %} {{site.post_image}} {% endif %}"/>
 					</div>
-					<div class="head-body">{{post.content}}</div>
-					<div class="tagWrapper">
+					<div class="head-body">{{post.content}}
+<div class="head-tagWrapper">
 						{% for tag in post.tags %} {% if tag != "headpost" %}
-						<a href='/tags/{{ tag }}' class="post-tag"> {{ tag }} </a>
+						<a href='/tags/{{ tag }}' class="post-tag"> #{{ tag }} </a>&nbsp;
 						{% endif %} {% endfor %}
+					</div>
 					</div>
 				</div>
 			</div>
@@ -60,7 +44,7 @@ layout: home
 		<ul class="home-postlist full_area">
 				
 {% endif %}
-			{% for post in site.tags["home"] limit:5 %}
+			{% for post in site.tags["home"] limit:9 %}
 	<li>
 <!-- --> <div class="post-wrapper basic">
 						<a href='{{post.url}}'>
@@ -74,13 +58,14 @@ layout: home
 				{{post.date | date: '%B %d, %Y'}}</p>
 				<div class="post-tagWrapper">
 							{% for tag in post.tags %} {% if tag !="home" and tag !="headpost" %}
-							<span class="post-tag"><a href="/tags/{{tag}}">{{ tag }}</a></span> {% endif %}
+							<a href="/tags/{{tag}}">#{{ tag }}</a>{% endif %}
 							{% endfor %}
 						</div>
 				<!-- --></div>
 				</li>
 				{% endfor %}
 				</ul> 
+				<div class="btn-wrapper"><a href="/tags" class='btn btn-default'> 더 많은 포스트 보기</a></div>
 		</div>
 	</div>
 </div>

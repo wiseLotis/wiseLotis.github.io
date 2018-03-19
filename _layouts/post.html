@@ -4,16 +4,22 @@
   {% include includes.html %}
 </head>
 <body> 
-  {% include header2.html %}
-  <div class="MT60">
+  {% include header.html %}
+  <div class="content-wrapper">
     <div class="row">
       <div class="col-sm-2 sidebar_wrapper">
         <div class="sidebar">
-          {% include side_bar.html %}
+          {% capture category_nm %}{{page.categories[0]}}{% endcapture %}
+          <p class="category_nm"><a href="/posts/{{category_nm}}">{{category_nm}}</a></p>
+          <ul>
+            {% for post in site.categories[category_nm] %}
+            <li class='post_item {% if post.url == page.url %} active {% endif %}'><a href='{{post.url}}'>{{ post.title }}</a></li>
+            {% endfor %}
+          </ul>
         </div>
       </div>
-      <div class="col-sm-10 content-wrapper" style="border-top: 1px solid #f1f1f1">
-        <div class="content">
+      <div class="col-sm-10" style="border-top: 1px solid #f1f1f1">
+        <div class="post-content">
           <h2 class="post-title">{{page.title}}</h2>
           <p class="muted">{{page.date | date: '%B %d, %Y'}}</p>
           <div class="postbody">
@@ -25,16 +31,24 @@
               {% endfor %}
             </div> 
           </div>
-        <br>
-        {% if page.comments %}
-        <div class="MT20 comments-wrapper">
-          {% include comments.html %}
+          <br>
+          {% if page.comments %}
+          <div class="MT20 comments-wrapper">
+            {% include comments.html %}
+          </div>
+          {% endif %}
         </div>
-        {% endif %}
       </div>
     </div>
+    <!-- <div id="post-nav" class="clearfix">
+      {% if page.previous.url %} 
+      <a class="prev" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a> 
+      {% endif %} 
+      {% if page.next.url %} 
+      <a class="next" href="{{page.next.url}}">{{page.next.title}} &raquo;</a> 
+      {% endif %} 
+    </div> -->
   </div>
-</div>
-{% include footer.html %}
+  {% include footer.html %}
 </body>
 </html>

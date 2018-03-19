@@ -1,11 +1,11 @@
 
-- name: notice
-  desc: 공지사항.. 
-  permalink: /posts/notice
-
 - name: free
   desc: 자유게시판 아무거나.. 
   permalink: /posts/free
+
+- name: task 
+  desc: 과제 
+  permalink: /posts/task 
 
 - name: tech
   permalink: /posts/tech

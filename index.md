@@ -4,7 +4,7 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: simple
 ---
-<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/basic.css"/>
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">

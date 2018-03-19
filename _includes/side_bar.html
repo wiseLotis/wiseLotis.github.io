@@ -1,13 +1,13 @@
-<ul class="nav nav-pills flex-column MT30">
+<ul class="nav nav-pills flex-column">
 		{% for category in site.data.categories %}
 			{% if category.disable == nil %}
-					<li class="nav-item dropdown" {% if category.desc %} data-toggle="tooltip" data-placement='top' title='{{ category.desc }}' {% endif %}>
+					<li class="nav-item dropdown  {% if category.permalink == page.url %} active {% endif %}" {% if category.desc %} data-toggle="tooltip" data-placement='top' title='{{ category.desc }}' {% endif %}>
 						<a class="nav-link category " href="{{category.permalink}}" >{{category.name}}</a>
 						{% if category.subcategories %}
-						<ul class="sub_ul MT05 ML15">
+						<ul class="sub_ul">
 							{% for sub in category.subcategories %}
 								{% if sub.disable == nil %}
-								<li class="nav-item" {% if sub.desc %} data-toggle="tooltip" data-placement='top' title='{{ sub.desc }}' {% endif %}>
+								<li class="nav-item {% if sub.permalink == page.url %} active {% endif %}" {% if sub.desc %} data-toggle="tooltip" data-placement='top' title='{{ sub.desc }}' {% endif %}>
 								<a class="nav-link sub_category" data-toggle="" href="{{sub.permalink}}">
 								{{sub.name}}</a>
 								</li>

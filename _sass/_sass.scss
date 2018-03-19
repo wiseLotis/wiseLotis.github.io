@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+$main-color:#604c8d;
+$mute-main-color:#9385b2; 
+$dark-main-color:#20045a;
+$sub-color:#7c13e5;
+$mute-sub-color: #d8c7fd; 
+$mute-color:#828282; /* 회색 */
+$base-color:#f7f4ff; 
+$fc-color:#26292c;
+$em-fc-color:#cf1b27;
+$link-fc-color:#2e9fff;
+$dark-fc-color:#523e7c;
+$overflow_hid:hidden; 
+$breakpoints: (
+	'x-small': (max-width:375px), 
+	'small': (max-width:500px),
+	'medium': (max-width: 800px),
+	'large': (max-width: 1000px),
+	'huge': (max-width: 1200px)
+	);
+
+/// 반응형 매니저
+/// @access public
+/// @param {String} $breakpoint - 브레이크포인트
+/// @requires $breakpoints
+@mixin respond-to($breakpoint) {
+	$raw-query: map-get($breakpoints, $breakpoint);
+
+	@if $raw-query {
+		$query: if(
+			type-of($raw-query) == 'string',
+			unquote($raw-query),
+			inspect($raw-query)
+			);
+
+		@media #{$query} {
+			@content;
+		}
+	} @else {
+			@error 'No value found for `#{$breakpoint}`. '
+			+ 'Please make sure it is defined in `$breakpoints` map.';
+	}
+}
+
+@mixin linkColor($common, $focus, $visited){
+	a, a:-webkit-any-link {
+		color:$common !important; 
+	}
+	a:hover, a:focus{
+		color:$focus !important; 
+	}
+	a:visited {
+		color:$visited !important; 
+	}
+}
+@mixin linkDeco($common, $focus, $visited){
+	a, a:-webkit-any-link {
+		text-decoration:$common !important; 
+	}
+	a:hover, a:focus{
+		text-decoration:$focus !important; 
+	}
+	a:visited {
+		text-decoration:$visited !important; 
+	}
+}
+
+@mixin ellipsis{
+	overflow:$overflow_hid;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+
+@mixin hide_txt{
+	display:inline-block;
+	overflow:$overflow_hid;
+	line-height:9999px;
+	vertical-align:top;
+}

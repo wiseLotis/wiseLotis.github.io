@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+.mynav{
+	position:relative; 
+	width:100%; 
+	height:70%; 
+	min-height:300px; 
+	z-index:100; 
+	top:0px; 
+	background: url("/assets/flower.jpg"); 
+	background-size: 100% auto; 
+	@include respond-to('small'){
+		background-size: auto 100%; 
+	}
+
+	&.under	.navlist_box{
+		background-color:$main-color; 
+	}
+	.logo_box{
+		position:absolute; 
+		top:10px; 
+		left: 10px; 
+		.logo{
+			display:inline-block; 
+			width:40px; 
+			img{
+				background-color: $main-color;
+				padding: 10%;
+				border-radius:10px;
+			}
+		}
+	}
+	.navlist_box{
+		padding:20px 20px 20px 20px; 
+		position:fixed; 
+		width:100%; 
+		min-height:62px; 
+		background-color:rgba(96,76,141,0.52); 
+
+		ul{
+			display:inline-flex; 
+			flex-flow: row wrap; 
+			padding-left:50px; 
+			margin:auto; 
+
+			@include respond-to('small'){
+				display:none; 
+			}
+			li.navitem{
+				margin-left: 15px;  
+				padding:0 5px; 
+				text-align:right; 
+				position:relative; 
+				@include respond-to('small'){  
+				}
+				@include linkColor(#ffffff,#ffffff, #ffffff); 
+				@include linkDeco(none, none, none); 
+				a:focus, a:hover{
+					font-size:1.3em; 
+				}
+				.drop_navlist{
+					display:inline-flex;   
+					.drop_navitem{
+						margin-left: 15px;  
+						padding:0 5px; 
+						font-size: 0.8em; 
+					}
+				}
+				a.navlink{
+					display:inline-block; 
+				}
+				&.active>a{
+					border-bottom: 4px solid rgba(255,255,255,0.8); 
+				}  
+			}
+		}
+	}
+	.title_box{
+		color:#ffffff !important; 
+		position:absolute;
+		bottom: 5%;  
+		margin: 0 5% 0 5%;
+		width: 90%; 
+		font-size: 1.4em; 
+		text-align:right;
+		/* word-break: break-all; */
+		@include ellipsis; 
+		.blog_name{
+			font-size:3em; 
+			margin-bottom: 0.5em; 
+			@include linkColor(#ffffff,#ffffff,#ffffff);
+		}
+
+	}
+}
+

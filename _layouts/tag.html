@@ -13,8 +13,8 @@
   {% include header.html %}
   <div class="">
     <div class="row">
-      <div class="col-sm-3 MT30">
-        <div class="subtags_wrapper">
+      <div class="col-sm-3 subtags_wrapper">
+        <div class="sidetag">
           {% include sub_tags.html %}
         </div>
 
@@ -63,7 +63,7 @@
                 {% else %}
                 {{ site.title }}
                 {% endif %} 
-                on {{ post.date | date: "%B %-d, %Y" }}
+                <!-- on {{ post.date | date: "%B %-d, %Y" }} -->
               </p>
             </a>
           </li>

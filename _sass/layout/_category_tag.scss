@@ -21,10 +21,10 @@ body{
     color: $main-color; 
     font-size:3em; 
     text-align:right; 
-    background: url('/assets/violet-space-galaxy.jpg') no-repeat center center; 
+    background: url('/assets/flower.jpg') no-repeat center center; 
     background-size:100% auto; 
     @include respond-to('small'){
-     background: url('/assets/violet-space-galaxy.jpg') no-repeat center; 
+     background: url('/assets/flower.jpg') no-repeat center; 
     } 
     white-space:normal; 
     word-break:keep-all; 
@@ -45,11 +45,7 @@ body{
         font-size: inherit;
         position: absolute;
    }
-} 
-.subtags_wrapper{
-    width:100%; 
-}
-
+}  
 .tag_name{
     color: $main-color;
     font-size: 1em;
@@ -102,3 +98,4 @@ body{
         }
     }
 }
+

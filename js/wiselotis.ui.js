@@ -1,3 +1,4 @@
+
 $.fn.areaSelecting = function(){
 	var $this = $(this); 
 	
@@ -17,7 +18,5 @@ $.fn.areaSelecting = function(){
 			$(area).show(); 
 			$boxarea.find('.box').not(area).hide(); 
 		}
-	})
-
-
+	});
 }
