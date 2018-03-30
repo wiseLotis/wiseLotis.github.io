@@ -1,14 +1,14 @@
 @charset "UTF-8";
 .content-wrapper{
 	max-width:100% !important;
-	padding:0 !important;  
+	padding:0 !important;
 }
 .post-content{
-	font-size:0.9rem; 
-	padding: 2em 1em; 
+	font-size:0.9rem;
+	padding: 2em 1em;
 	background-color:#ffffffe3;
 	& *{
-		word-break:break-all;  
+		word-break:break-all;
 	}
 	ol{
 		padding-left:2em;
@@ -17,9 +17,9 @@
 		font-size: 1.5rem;
 	}
 	.postbody{
-		padding: 1.5em 1em; 
-		background-color:$base-color; 
-		h2{	
+		padding: 1.5em 1em;
+		background-color:$base-color;
+		h2{
 			font-size:2em;
 		}
 		img{
@@ -54,37 +54,37 @@
 	.post-title {
 		font-size: 2.5em;
 		letter-spacing: -1px;
-		line-height: 1; 
+		line-height: 1;
 	}
 
 	.post-content{
 		padding: 30px 0;
 		margin-bottom: 30px;
-		font-size: 1em;  
+		font-size: 1em;
 	}
 	.tagWrapper{
 		text-align:right;
 	}
 	.post-tag{
 		&:before{
-			content: '#'; 
+			content: '#';
 			color: $main-color;
-		}   
+		}
 
-	}	 
+	}
 }
 .select_container{
 	.btn_area{
-		margin-bottom:10px; 
-		text-align:right; 
+		margin-bottom:10px;
+		text-align:right;
 		.btn{
-			font-size:0.8rem; 
-			color:$sub-color !important; 
-			border:1px solid; 
+			font-size:0.8rem;
+			color:$sub-color !important;
+			border:1px solid;
 		}
 		.btn.active{
-			color:#ffffff !important; 
-			background-color:$sub-color; 
+			color:#ffffff !important;
+			background-color:$sub-color;
 		}
 	}
 	.box_area{
@@ -96,17 +96,17 @@
 .ex-container{
 	width: 100%;
 	display:flex;    display:-webkit-flex;    display:-ms-flex;
-	justify-content: space-between; 
+	justify-content: space-between;
 	-webkit-justify-content: space-between;
 	-ms-justify-content: space-between;
 	background-color:#ffffff;
-	padding:0.5em; 
-	flex-wrap:wrap; 
+	padding:0.5em;
+	flex-wrap:wrap;
 	.half_area{
-		width:49%; 
+		width:49%;
 		padding:0.5em;
 		@include respond-to('medium'){
-			width:100%; 
+			width:100%;
 		}
 	}
 

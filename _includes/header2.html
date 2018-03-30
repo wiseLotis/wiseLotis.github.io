@@ -2,16 +2,16 @@
 <nav class="navbar navbar-expand-lg">
  <a class="navbar-brand {% if site.logo %} has-logo {% endif %}" href="/">{% if site.logo %} <img src="{{ site.logo | prepend: site.url }}"/> {% else %} wiseLotis {% endif %}</a>
  <button class="navbar-toggler custom" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="toggle-stick"></span> 
-  <span class="toggle-stick"></span> 
-  <span class="toggle-stick"></span> 
+  <span class="toggle-stick"></span>
+  <span class="toggle-stick"></span>
+  <span class="toggle-stick"></span>
 </button>
 
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
   <ul class="navbar-nav mr-auto">
     <li class="nav-item active">
       <a class="nav-link" href="/blog">Home<span class="sr-only">(current)</span></a>
-    </li> 
+    </li>
     {% for category in site.data.categories %}
      {% if category.disable == nil %}
         {% if category.subcategories %}
@@ -28,11 +28,11 @@
                 {% endfor %}
               </div>
               {% endif %}
-            </li> 
+            </li>
         {% else %}
           <li class="nav-item">
             <a class="nav-link" href="{{category.permalink}}">{{category.name}}<span class="sr-only">(current)</span></a>
-          </li> 
+          </li>
         {% endif %}
       {% endif %}
     {% endfor %}
@@ -44,7 +44,7 @@
    <form class="form-inline my-2 my-lg-0">
    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-   </form> 
+   </form>
  </div> -->
 <!--  <a class="nav-link TXTR" href="/about/">about</a>
 -->

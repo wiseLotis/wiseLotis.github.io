@@ -1,20 +1,20 @@
 @charset "UTF-8";
 
 $main-color:#604c8d;
-$mute-main-color:#9385b2; 
+$mute-main-color:#9385b2;
 $dark-main-color:#20045a;
 $sub-color:#7c13e5;
-$mute-sub-color: #d8c7fd; 
+$mute-sub-color: #d8c7fd;
 $mute-color:#828282; /* 회색 */
-$base-color:#f7f4ff; 
+$base-color:#f7f4ff;
 $fc-color:#26292c;
 $em-fc-color:#cf1b27;
 $link-fc-color:#2e9fff;
 $dark-fc-color:#523e7c;
-$overflow_hid:hidden; 
+$overflow_hid:hidden;
 $breakpoints: (
-	'x-small': (max-width:375px), 
-	'small': (max-width:500px),
+	'x-small': (max-width:375px),
+	'small': (max-width:570px),
 	'medium': (max-width: 800px),
 	'large': (max-width: 1000px),
 	'huge': (max-width: 1200px)
@@ -45,24 +45,24 @@ $breakpoints: (
 
 @mixin linkColor($common, $focus, $visited){
 	a, a:-webkit-any-link {
-		color:$common !important; 
+		color:$common !important;
 	}
 	a:hover, a:focus{
-		color:$focus !important; 
+		color:$focus !important;
 	}
 	a:visited {
-		color:$visited !important; 
+		color:$visited !important;
 	}
 }
 @mixin linkDeco($common, $focus, $visited){
 	a, a:-webkit-any-link {
-		text-decoration:$common !important; 
+		text-decoration:$common !important;
 	}
 	a:hover, a:focus{
-		text-decoration:$focus !important; 
+		text-decoration:$focus !important;
 	}
 	a:visited {
-		text-decoration:$visited !important; 
+		text-decoration:$visited !important;
 	}
 }
 

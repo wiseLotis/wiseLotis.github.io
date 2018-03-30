@@ -1,49 +1,53 @@
 @charset "UTF-8";
 .sidebar_wrapper{
-	padding:0 !important; 
+	padding:0 !important;
+	border-bottom:1px solid $mute-main-color;
 }
 .sidebar{
-	padding:20px 0;  
+	padding:20px 0;
 	.category_nm{
 	    padding: 20px 10px;
 	    margin-top: -20px;
 	    background-color: #604c8d;
 	    color: #ffffff;
 	    font-size: 1.3em;
-	     @include linkColor(#ffffff, #ffffff, #ffffff); 
+	     @include linkColor(#ffffff, #ffffff, #ffffff);
 	}
 	ul{
-		margin:0; 
+		margin:0;
+		//padding:0 20px;
 		li{
 			&.post_item{
-				font-size: 0.8em;
+					font-size: 0.8em;
 			    margin-bottom: 0.5em;
 	 		    padding: 0.5em;
+					@include linkColor($main-color, $sub-color, $dark-fc-color);
+
 			}
 		  a{
-			display:inline-block; 
-			width:100%; 
+			display:inline-block;
+			width:100%;
  		  }
  		  &.active{
- 		  	background-color:$mute-main-color; 
- 		  	font-size:1.1rem; 
- 		     @include linkColor(#ffffff, #ffffff, #ffffff); 
+ 		  	background-color:$mute-main-color;
+ 		  	font-size:1.1rem;
+ 		     @include linkColor(#ffffff, #ffffff, #ffffff);
  		  }
  		}
 	}
 
 /* BOOTSTRAP */
 	.nav{
-		font-size:16px; 
+		font-size:16px;
 		li.active{
-		 		  	background-color:$mute-main-color; 
-		 		  	font-size:1.1rem; 
-		 		     @include linkColor(#ffffff, #ffffff, #ffffff); 
+		 		  	background-color:$mute-main-color;
+		 		  	font-size:1.1rem;
+		 		     @include linkColor(#ffffff, #ffffff, #ffffff);
  		}
 		.sub_ul{
-			font-size:0.8em; 
+			font-size:0.8em;
 			li{
-				padding-left:20px; 
+				padding-left:20px;
 			}
 		}
 	}
@@ -56,84 +60,84 @@
 
 .sidetag{
 	display:inline-block;
- 	width: 90%; margin:auto;  
- 	margin-top:50px;		
- 	min-height:250px; 
- 	border:1px solid $main-color; 
- 	border-radius:10px; 
- 	position:relative; 
- 	padding:2em 0.5em; 
+ 	width: 90%; margin:auto;
+ 	margin-top:50px;
+ 	min-height:250px;
+ 	border:1px solid $main-color;
+ 	border-radius:10px;
+ 	position:relative;
+ 	padding:2em 0.5em;
  	h4{
- 		color:$main-color; 
- 		display:inline-block; 
+ 		color:$main-color;
+ 		display:inline-block;
  		position:absolute;
  		top: -0.5em;
  		background-color: #ffffff;
  		left: 1em;
- 		padding: 0 10px; 
+ 		padding: 0 10px;
  	}
  	ul{
  		margin:0;
  	}
  	[class^='tag_']{
- 		padding:10px; 
- 		font-weight:800; 
- 		font-size:2.5em; 
- 		display:inline-block; 
- 		color:$sub-color; 
+ 		padding:10px;
+ 		font-weight:800;
+ 		font-size:2.5em;
+ 		display:inline-block;
+ 		color:$sub-color;
  		&:hover, &:focus{
- 			background-color:$sub-color; 
- 			border-radius:5px; 
+ 			background-color:$sub-color;
+ 			border-radius:5px;
  			a{
- 				color:#ffffff !important; 
- 				text-decoration:none; 
+ 				color:#ffffff !important;
+ 				text-decoration:none;
  			}
  		}
  	}
 
  	.tag_{
  		&1{
- 			font-weight:400; 
+ 			font-weight:400;
  			font-size:0.9em;
  			a{
- 				color:$main-color !important;  
+ 				color:$main-color !important;
  			}
  		}
  		&2{
- 			font-weight:400; 
- 			font-size:1.2em; 
+ 			font-weight:400;
+ 			font-size:1.2em;
  			a{
- 				color:$sub-color !important; 				
+ 				color:$sub-color !important;
  			}
  		}
  		&3{
- 			font-weight:400; 
- 			font-size:1.5em; 
+ 			font-weight:400;
+ 			font-size:1.5em;
  			a{
- 				color: $dark-main-color !important; 
+ 				color: $dark-main-color !important;
  			}
  		}
  		&4{
- 			font-weight:600; 
- 			font-size:1.8em; 
+ 			font-weight:600;
+ 			font-size:1.8em;
  			a{
- 				color:$main-color !important; 				
+ 				color:$main-color !important;
  			}
  		}
  		&5{
- 			font-weight:600; 
+ 			font-weight:600;
  			font-size:2.0em;
  			a{
- 				color:$sub-color !important; 				
+ 				color:$sub-color !important;
  			}
  		}
  		&6{
- 			font-weight:600; 
+ 			font-weight:600;
  			font-size:2.2em;
  			a{
- 				colot:$dark-main-color !important;				
+ 				colot:$dark-main-color !important;
  			}
- 		}  
+ 		}
  	}
 
  }

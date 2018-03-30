@@ -1,20 +1,13 @@
-<!-- <ul class="MT20">
-{% for category in site.categories %}
-   <li> <a href="/posts/{{ category[0] }}/" style="text-decoration: none;">{% if category[0] == 'notice' %}{{ category[0] | upcase }}{% else %}{{ category[0] | capitalize }}{% endif %}</a>
-   	<p>{{category[0]_description}}</p></li>
-{% endfor %}
-</ul> -->
-
-	<ul class="nav nav-pills flex-column MT20 ML05" style="display:none;">
+<ul class="nav nav-pills flex-column">
 		{% for category in site.data.categories %}
 			{% if category.disable == nil %}
-					<li class="nav-item dropdown" {% if category.desc %} data-toggle="tooltip" data-placement='top' title='{{ category.desc }}' {% endif %}>
+					<li class="nav-item dropdown  {% if category.permalink == page.url %} active {% endif %}" {% if category.desc %} data-toggle="tooltip" data-placement='top' title='{{ category.desc }}' {% endif %}>
 						<a class="nav-link category " href="{{category.permalink}}" >{{category.name}}</a>
 						{% if category.subcategories %}
-						<ul class="sub_ul MT05 ML15">
+						<ul class="sub_ul">
 							{% for sub in category.subcategories %}
 								{% if sub.disable == nil %}
-								<li class="nav-item" {% if sub.desc %} data-toggle="tooltip" data-placement='top' title='{{ sub.desc }}' {% endif %}>
+								<li class="nav-item {% if sub.permalink == page.url %} active {% endif %}" {% if sub.desc %} data-toggle="tooltip" data-placement='top' title='{{ sub.desc }}' {% endif %}>
 								<a class="nav-link sub_category" data-toggle="" href="{{sub.permalink}}">
 								{{sub.name}}</a>
 								</li>
@@ -27,9 +20,12 @@
 			{% endif %}
 		{% endfor %}
 	</ul>
+	<div class="btn_area TXTC">
+	<a href="#" class="btn-close_up_nav"><span>^</span></a>
+	</div>
 	<script>
 	</script>
-<!-- 
+<!--
 <ul class="MT20 ML05">
 	<li>
 		<a href="/posts/free">Free</a>
