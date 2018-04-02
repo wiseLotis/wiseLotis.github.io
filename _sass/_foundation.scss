@@ -193,7 +193,7 @@ a:visited {
 	text-align:right;
 	@include respond-to('small'){
 		position: absolute;
-		bottom: -120px;
+		bottom: -60px;
 	}
 }
 /**
@@ -410,25 +410,5 @@ a:visited {
  		}
  	}
 
-
- }
-
- .up_nav_area{
-	 	width: 100%;
-    height: auto;
-    display: block;
-		z-index: 1000;
-    background-color: #ffffff;
-		position: fixed;
-    //top: -100%;
-	 	top:100%;
-	 	right:0;
-		.btn-close_nav{
-			background-color: $main-color;
-			padding: 8px 20px 1px;
-			display: inline-block;
-			border-radius: 100px 100px 0 0;
-			color: #ffffff;
-		}
 
  }
