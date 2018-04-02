@@ -19,6 +19,12 @@
 					</li>
 			{% endif %}
 		{% endfor %}
+		<li class="nav-item {% if sub.permalink == page.url %} active {% endif %}"  data-toggle="tooltip" data-placement='top' title='tag모음'>
+		 <a class="nav-link" href="/tags/"> tags </a>
+	 </li>
+		<li class="nav-item {% if sub.permalink == page.url %} active {% endif %}"  data-toggle="tooltip" data-placement='top' title='about me'>
+		 <a class="nav-link" href="/about/">about</a>
+	 </li>
 	</ul>
 	<div class="btn_area TXTC">
 	<a href="#" class="btn-close_up_nav"><span>^</span></a>

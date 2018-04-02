@@ -5,9 +5,15 @@ body{
 	font-family: 'daumFont', normal !important;
 	font-weight: 400 !important;
 	color: $fc-color;
-	font-size:14px;
+	font-size:16px;
+	@include respond-to('large'){
+		font-size:14px;
+	}
+	@include respond-to('medium'){
+		font-size:13px;
+	}
 	@include respond-to('small'){
-		font-size:16px;
+		font-size:12px;
 	}
 
 }

@@ -87,6 +87,9 @@
 	background-size: 100% auto;
 	position: relative;
 	word-break: break-all;
+	@include respond-to('large') {
+		background-size: 100% 100%;
+	}
 	@include respond-to('small') {
 		background-size: auto 100%;
 	}
@@ -119,8 +122,7 @@
 			margin:0;
 			font-size: 17px;
 			&>li{
-				margin-top: 5px;
-				@include linkColor($main-color, #ffffff , $dark-fc-color);
+ 				@include linkColor($main-color, #ffffff , $dark-fc-color);
 
 			}
 			.sub_ul{

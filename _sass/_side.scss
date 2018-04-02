@@ -60,13 +60,18 @@
 
 .sidetag{
 	display:inline-block;
- 	width: 90%; margin:auto;
  	margin-top:50px;
  	min-height:250px;
  	border:1px solid $main-color;
  	border-radius:10px;
- 	position:relative;
- 	padding:2em 0.5em;
+	position:fixed;
+	width:23%;
+	@include respond-to('small'){
+		width: 100%; margin:auto;
+		position:relative;
+		margin: 50px 0;
+	}
+ 	padding:2em 1em;
  	h4{
  		color:$main-color;
  		display:inline-block;
@@ -78,9 +83,20 @@
  	}
  	ul{
  		margin:0;
+		li{
+			display:inline-block;
+			padding:10px;
+			&:hover, &:focus{
+	 			background-color:$sub-color;
+	 			border-radius:5px;
+	 			a{
+	 				color:#ffffff !important;
+	 				text-decoration:none;
+	 			}
+	 		}
+		}
  	}
  	[class^='tag_']{
- 		padding:10px;
  		font-weight:800;
  		font-size:2.5em;
  		display:inline-block;
@@ -98,14 +114,14 @@
  	.tag_{
  		&1{
  			font-weight:400;
- 			font-size:0.9em;
+ 			font-size:1.1em;
  			a{
  				color:$main-color !important;
  			}
  		}
  		&2{
  			font-weight:400;
- 			font-size:1.2em;
+ 			font-size:1.3em;
  			a{
  				color:$sub-color !important;
  			}

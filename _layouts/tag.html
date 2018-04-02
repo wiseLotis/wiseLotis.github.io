@@ -1,13 +1,15 @@
 <html>
 <head>
   <link href="/css/category_tag.css" rel="stylesheet">
+  <script src = "/js/greensock/TweenMax.min.js"></script>
+
   {% include includes.html %}
 </head>
-<body> 
+<body>
   <script>
   $(document).ready(function(){
-     $(".navitem").removeClass("active"); 
-    $(".navitem").filter("[data-name='tags']").addClass("active"); 
+     $(".navitem").removeClass("active");
+    $(".navitem").filter("[data-name='tags']").addClass("active");
   })
 </script>
   {% include header.html %}
@@ -31,14 +33,14 @@
           {% unless site.tags.[page.tag] | size > 0 %}
           <p class="noposts MT50" >No posts in this category at this time.</p>
           {% endunless %}
-          
+
 
           <ul class="post-preview">
             {% for post in site.tags.[page.tag] %}
             <li>
               <a href="{{ post.url | prepend: site.baseurl }}" ><div class="row">
                 <div class='col-sm-4'>
-                  <span class="post-title">            
+                  <span class="post-title">
                     {{ post.title }}{% if page.comments %} <a href="{{ post.url | prepend: site.baseurl }}#disqus_thread">0 Comments</a>{% endif %}
                   </span>
                   {% if post.subtitle %}
@@ -57,12 +59,12 @@
                 </div>
               </div>
               <p class="post-meta">
-                Posted by 
+                Posted by
                 {% if post.author %}
                 {{ post.author }}
                 {% else %}
                 {{ site.title }}
-                {% endif %} 
+                {% endif %}
                 <!-- on {{ post.date | date: "%B %-d, %Y" }} -->
               </p>
             </a>
@@ -83,5 +85,3 @@
 
 </body>
 </html>
-
-

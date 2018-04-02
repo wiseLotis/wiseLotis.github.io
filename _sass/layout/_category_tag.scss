@@ -97,6 +97,10 @@ font-size:17px;
 
   li {
     position: relative;
+    padding-bottom: 1.5em;
+    &+li{
+      border-top: 1px solid $mute-sub-color;
+    }
 
     & > a {
       display: inline-block;
