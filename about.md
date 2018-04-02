@@ -13,7 +13,6 @@ permalink: /about/
 </section>
 <section id="introduce">
   <p class="title">Contact..</p>
-  <p>Tel: +82 10-4314-0622</p>
   <p>Mail: wiselotis@gmail.com</p>
 </section>
  <div class="flower_area">
