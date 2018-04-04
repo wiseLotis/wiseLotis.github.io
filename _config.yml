@@ -17,8 +17,8 @@ title: wiseLotis
 email: wiselotis@gmail.com
 description:
   this is my blog
-# baseurl: "" # the subpath of your site, e.g. /blog
-# url: "http://127.0.0.1:4000/" # the base hostname & protocol for your site, e.g. http://example.com
+#baseurl: "" # the subpath of your site, e.g. /blog
+#url: "http://127.0.0.1:4000/" # the base hostname & protocol for your site, e.g. http://example.com
 url: "https://wiselotis.github.io/"
 baseurl: "https://wiselotis.github.io/"
 # twitter_username:

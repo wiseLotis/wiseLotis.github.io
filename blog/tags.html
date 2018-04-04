@@ -9,11 +9,13 @@ title: Tags
      max-width:100% !important;
    }
 </style>
+<script src = "/js/greensock/TweenMax.min.js"></script>
+
 </head>
 <script>
   $(document).ready(function(){
-     $(".navitem").removeClass("active"); 
-    $(".navitem").filter("[data-name='tags']").addClass("active"); 
+     $(".navitem").removeClass("active");
+    $(".navitem").filter("[data-name='tags']").addClass("active");
   })
 </script>
 <link href="/css/category_tag.css" rel="stylesheet">
@@ -35,8 +37,8 @@ title: Tags
         <li>
           <a href="{{ post.url | prepend: site.baseurl }}" ><div class="row">
             <div class='col-sm-4'>
-              <span class="post-title">            
-                {{ post.title }} 
+              <span class="post-title">
+                {{ post.title }}
               </span>
               {% if post.subtitle %}
               <p class="post-subtitle">
@@ -54,12 +56,12 @@ title: Tags
             </div>
           </div>
           <p class="post-meta">
-            Posted by 
+            Posted by
             {% if post.author %}
             {{ post.author }}
             {% else %}
             {{ site.title }}
-            {% endif %} 
+            {% endif %}
             on {{ post.date | date: "%B %-d, %Y" }}
           </p>
         </a>
@@ -72,6 +74,6 @@ title: Tags
 -->
 </div>
 </div>
-</div> 
+</div>
 
 </body>

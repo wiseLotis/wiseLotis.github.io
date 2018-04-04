@@ -2,7 +2,7 @@
 layout: post
 title:  "sass 이용"
 subtitle: ""
-slug: "sass"
+slug: "using-sass"
 description: "멋지고 간편하게 css 작성하기"
 categories: frontend tech
 google: true
