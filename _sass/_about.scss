@@ -3,12 +3,7 @@
 body{
 	margin:0;
 	padding:0 !important;
-	font-size:30px;
-	@include respond-to('small'){
-		font-size:14px;
-	}
-
-}
+ }
 .btn-blog_link{
 	color:#ffffff;
 	display:inline-block;
