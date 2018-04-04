@@ -8,6 +8,11 @@ categories: task
 tags: [task]
 comments: true
 image: "/assets/posts_con/cover_task.jpg"
+google: true
+sitemap :
+ changefreq: daily
+ priority: 1.0
+feed : true
 ---
 
 ##*LinkedListStack*
