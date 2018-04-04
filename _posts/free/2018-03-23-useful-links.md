@@ -7,6 +7,7 @@ description: ""
 categories: free
 tags: []
 comments: true
+feed:false
 ---
 *...*
 
