@@ -72,3 +72,81 @@
 
 </body>
 </html>
+<html>
+<head>
+  <link href="/css/category_tag.css" rel="stylesheet">
+  {% include includes.html %}
+</head>
+<body>
+  {% include header.html %}
+  <div class="">
+    <div class="row">
+      <div class="col-sm-12 content-wrapper" style="border-top: 1px solid #f1f1f1 ">
+       <!-- <div class='category-title' {% if page.category_image %} style="background-image: url('{{ page.category_image }}');" {% endif %}>
+        <div>
+          <h2> {{page.title}} </h2>
+        </div>
+      </div> -->
+      <div class="cate-wrapper">
+
+        <div class='sub_navi'>
+          {% include sub_navi.html %}
+        </div>
+<!-- <p class="subtitle">Posts related to: {{ page.title }}</p>
+-->
+{% unless page.content == '' %}
+<p>{{ page.content }}</p>
+{% endunless %}
+
+{% unless site.categories.[page.category] | size > 0 %}
+<p class="noposts MT50" >No posts in this tags at this time.</p>
+{% endunless %}
+
+<ul class="post-preview">
+  {% for post in site.categories.[page.category] %}
+  <li>
+    <a href="{{ post.url | prepend: site.baseurl }}" ><div class="row">
+      <div class='col-sm-4'>
+        <span class="post-title">
+          {{ post.title }}{% if page.comments %} <a href="{{ post.url | prepend: site.baseurl }}#disqus_thread">0 Comments</a>{% endif %}
+        </span>
+        {% if post.subtitle %}
+        <p class="post-subtitle">
+          {{ post.subtitle }}
+        </p>
+        {% endif %}
+
+      </div>
+      <div class='col-sm-8 '>
+        {% if post.description %}
+        <span class="post-description">
+          {{ post.description }}
+        </span>
+        {% endif %}
+      </div>
+    </div>
+    <p class="post-meta">
+      Posted by
+      {% if post.author %}
+      {{ post.author }}
+      {% else %}
+      {{ site.title }}
+      {% endif %}
+     <!--  on {{ post.date | date: "%B %-d, %Y" }} -->
+    </p>
+  </a>
+</li>
+{% endfor %}
+</ul>
+</div>
+</div>
+</div>
+</div>
+{% include footer.html %}
+<div class="side_bar_area">
+  {% include side_bar.html %}
+</div>
+<script id="dsq-count-scr" src="//{{site.disqus-shortname}}.disqus.com/count.js" async></script>
+
+</body>
+</html>

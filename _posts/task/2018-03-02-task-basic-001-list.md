@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "basic - 리스트(list)"
+title:  "BacktotheBasic - 리스트(list)"
 subtitle: ""
 slug: "task-basic-001-list"
 description: " "

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "basic - 스택(stack)_1-Array를 이용한 스택 구현"
+title:  "BacktotheBasic - 스택(stack)_1-Array를 이용한 스택 구현"
 subtitle: ""
 slug: "task-basic-002-stack"
 description: " "

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "basic - 스택(stack)_3-LinkedList를 이용한 스택 활용"
+title:  "BacktotheBasic - 스택(stack)_3-LinkedList를 이용한 스택 활용"
 subtitle: "LinkedList를 이용한 스택을 활용하여 계산기 만들어 보기"
 slug: "task-basic-004-LinkedListStack2"
 description: "폴리쉬표기법(후위표기법)을 사용하여 스택을 이용한 사칙연산 계산기 만들기"

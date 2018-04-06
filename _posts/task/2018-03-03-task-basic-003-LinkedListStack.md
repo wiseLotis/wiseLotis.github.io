@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "basic - 스택(stack)_2-LinkedList를 이용한 스택구현"
+title:  "BacktotheBasic - 스택(stack)_2-LinkedList를 이용한 스택구현"
 subtitle: "LinkedList를 이용한 스택구현"
 slug: "task-basic-003-LinkedListStack"
 description: " "
