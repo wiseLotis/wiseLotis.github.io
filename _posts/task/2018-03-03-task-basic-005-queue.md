@@ -46,4 +46,320 @@ feed : true
 그래서 순환큐에서는 배열을 생성할때 실제 용량보다 1만큼 더 크게 만들고 전단과 후단사이를 비우게 한다.
 큐가 비어있을땐 전단과 후단이 같은 인덱스를 가리키고, 큐가 꽉 차있는 경우에는 후단이 전단보다 1작은 값을 가지게 된다.
 
-큐를 구현해 보자
+큐를 구현해 보았다.
+
+<a class="btn btn-code" data-toggle="collapse" href="#basic">CODE</a>
+<div class="collapse_wrapper">
+<div class="collapse" id="basic">
+<div class="card">
+ {% highlight java %}
+
+ public class CircularQueue implements Queue{
+
+ 	private int capacity = 0;
+ 	private int Front=0, Rear=0;
+ 	private Object[] myArray;
+
+ 	public CircularQueue() {
+ 		this.capacity = 101; // 그냥 생성하면 default로 100개를 저장할 수 있는 array를 생성한다.
+ 		this.myArray = new Object[101];
+ 	}
+ 	public CircularQueue(int capacity) {
+ 		this.capacity = capacity;
+ 		this.myArray = new Object[capacity+1];
+ 	}
+  public static void main(String[] args) {
+     CircularQueue myqueue = new CircularQueue(5);
+      myqueue.add("1");
+      myqueue.add("2");
+      myqueue.add("3");
+      System.out.println(myqueue.toString());
+      System.out.println(myqueue.pop().toString());
+      System.out.println(myqueue.pop().toString());
+      System.out.println(myqueue.pop().toString());
+      myqueue.add("1");
+      myqueue.add("2");
+      myqueue.add("3");
+      myqueue.add("4");
+      myqueue.add("5");
+      myqueue.add("6");
+      System.out.println(myqueue.toString());
+      System.out.println(myqueue.getArraytoString());
+
+  }
+  @Override
+  public Object peek() {
+    // TODO Auto-generated method stub
+    return this.myArray[this.Front];
+  }
+
+  @Override
+  public Object pop(){
+  		if(isEmpty()){
+  			System.out.println("this queue is empty!");
+  			return null;
+  		}
+  		Object willPop = this.myArray[this.Front];
+  		this.Front++;
+  	    if(this.Front > capacity){
+  	      this.Front = 0;
+  	    }
+   		return willPop;
+  	}
+
+ 	public String toString(){
+ 		String result = "[";
+ 		int front = this.Front;
+ 		int rear = this.Rear;
+ 		if (rear < front){
+ 			rear += this.myArray.length;
+ 		}
+ 		result += this.myArray[front++].toString() ;
+ 		while(front < rear){
+ 			if(front > this.myArray.length-1){
+ 				result += "," + this.myArray[front++ - myArray.length].toString();
+ 			}else{
+ 				result += "," + this.myArray[front++].toString();
+ 			}
+ 		}
+
+ 		result += "]";
+
+ 		return result;
+ 	}
+
+ 	public String getArraytoString(){
+ 		String result = "[";
+ 		for(int i=0; i < myArray.length ; i++){
+ 			result += myArray[i];
+ 		}
+ 		result += "]";
+ 		return result;
+ 	}
+
+ 	@Override
+ 	public void add(Object obj) {
+  		if(isFull()){
+ 			System.out.println("this queue is full of data");
+ 		}else{
+ 			System.out.println(this.Rear);
+ 			this.myArray[this.Rear] = obj;
+			this.Rear += 1;
+
+			if(this.Rear>this.capacity){
+				this.Rear -= myArray.length;
+			}
+ 			System.out.println("add" +  obj.toString() + "front : " +  this.Front + "   rear:  " + this.Rear);
+ 		}
+
+ 	}
+ 	public boolean isFull() {
+ 		 int rear = this.Rear;
+ 		 int front = this.Front;
+ 		 if(front == 0){
+ 			 front = capacity+1;
+ 		 }
+ 		if(rear == front-1){
+ 			return true;
+ 		}else{
+ 			return false;
+ 		}
+ 	}
+
+ 	@Override
+ 	public boolean isEmpty() {
+ 		if(this.Rear == this.Front){
+ 			return true;
+ 		}else{
+ 			return false;
+ 		}
+
+ 	}
+  verride
+ 	public int getSize() {
+ 	  return this.capacity;
+ 	}
+ 	@Override
+ 	public void clear() {
+ 		this.Front = 0;
+ 		this.Rear = 0;
+ 	}
+
+ }
+ {% endhighlight %}
+</div>
+</div>
+</div>
+
+  만들고 나니까 front 나 rear를 옮길때마다 마지막 인덱스에서 0번째 인덱스로 순환시키는 로직이 계속해서 반복된다.
+  그래서 next()와 prev를 만들어 코드를 간결화 했다.
+
+CircularQueue.java
+<a class="btn btn-code" data-toggle="collapse" href="#simple">CODE</a>
+<div class="collapse_wrapper">
+<div class="collapse" id="simple">
+<div class="card">
+{% highlight java %}
+
+public class CircularQueue implements Queue{
+
+	private int capacity = 0;
+	private int Front=0, Rear=0;
+	private Object[] myArray;
+
+	public CircularQueue() {
+		this.capacity = 101;
+		this.myArray = new Object[101];
+	}
+	public CircularQueue(int capacity) {
+		this.capacity = capacity;
+		this.myArray = new Object[capacity+1];
+	}
+
+
+	public static void main(String[] args) {
+		 CircularQueue myqueue = new CircularQueue(5);
+			 	myqueue.add("1");
+				myqueue.add("2");
+				myqueue.add("3");
+				System.out.println(myqueue.toString());
+				System.out.println(myqueue.pop().toString());
+				System.out.println(myqueue.pop().toString());
+				System.out.println(myqueue.pop().toString());
+				myqueue.add("1");
+				myqueue.add("2");
+				myqueue.add("3");
+				myqueue.add("4");
+				myqueue.add("5");
+				myqueue.add("6");
+				System.out.println(myqueue.toString());
+				System.out.println(myqueue.getArraytoString());
+				System.out.println(myqueue.pop().toString());
+				System.out.println(myqueue.pop().toString());
+				System.out.println(myqueue.pop().toString());
+				System.out.println(myqueue.pop().toString());
+				System.out.println(myqueue.pop().toString());
+				System.out.println(myqueue.pop().toString());
+
+
+	}
+	@Override
+	public Object peek() {
+		// TODO Auto-generated method stub
+		return this.myArray[this.Front];
+	}
+
+	@Override
+	public Object pop(){
+		if(isEmpty()){
+			System.out.println("this queue is empty!");
+			return null;
+		}
+		Object willPop = this.myArray[this.Front];
+		this.Front = next(this.Front);
+ 		return willPop;
+	}
+
+	@Override
+	public void add(Object obj) {
+ 		if(isFull()){
+			System.out.println("this queue is full of data");
+		}else{
+			System.out.println(this.Rear);
+			this.myArray[this.Rear] = obj;
+
+			this.Rear = next(this.Rear);
+
+			System.out.println("add" +  obj.toString() + "front : " +  this.Front + "   rear:  " + this.Rear);
+		}
+
+	}
+	@Override
+	public boolean isEmpty() {
+
+		if(this.Rear == this.Front){
+			return true;
+		}else{
+			return false;
+		}
+
+	}
+	@Override
+	public boolean isFull() {
+		if(this.Rear== prev(this.Front)){
+			return true;
+		}else{
+			return false;
+		}
+
+	}
+
+	@Override
+	public int getSize() {
+	  return this.capacity;
+	}
+	@Override
+	public void clear() {
+		this.Front = 0;
+		this.Rear = 0;
+	}
+
+	public String toString(){
+		String result = "[";
+		int front = this.Front;
+		int rear = this.Rear;
+		if (rear < front){
+			rear += this.myArray.length; //front 보다 rear가 작다는건 뒤로 순환 되었다는거니까 array길이만큼 더해준다.
+		}
+		result += this.myArray[front].toString() ;
+		while(front < rear-1){
+			result += "," + this.myArray[next(front)].toString();
+			front++;
+		}
+
+		result += "]";
+
+		return result;
+	}
+
+	public String getArraytoString(){
+		String result = "[";
+
+		for(int i=0; i < myArray.length ; i++){
+			result += myArray[i];
+		}
+		result += "]";
+		return result;
+	}
+
+	public int next(int num){
+		if(num > this.capacity-1){
+			System.out.println(num + ": " + this.myArray.length);
+			return ++num - this.myArray.length;
+		}else{
+			return ++num;
+		}
+	}
+	public int prev(int num){
+		if(num == 0){
+			return num + this.myArray.length-1;
+		}else{
+			return --num;
+		}
+	}
+	@Override
+	public Object delete() {
+
+		return null;
+	}
+	@Override
+	public void destroy() {
+		// TODO Auto-generated method stub
+	}
+}
+{% endhighlight %}
+</div>
+</div>
+</div>
+
+한결 깔끔해지고 보기도 좋아졌다.
