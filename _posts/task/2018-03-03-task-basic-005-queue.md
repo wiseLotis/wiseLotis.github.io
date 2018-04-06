@@ -5,7 +5,7 @@ subtitle: "LinkedList를 이용한 스택을 활용하여 계산기 만들어 �
 slug: "task-basic-005-queue"
 description: "큐에 대해서 알아보고 큐를 구현해 보자"
 categories: task
-tags: [task, home]
+tags: [task, headpost]
 comments: true
 image: "/assets/posts_con/cover_task.jpg"
 google: true
