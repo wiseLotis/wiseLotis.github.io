@@ -78,9 +78,9 @@ degree는 자식노드의 개수를 말한다.
 ### 구현
 
 먼저 인터페이스를 만들었다.
+{% highlight java %}
 
-<pre>
-package task.structure;
+ package task.structure;
 
 public interface Tree<T> {
   public T getRoot();
@@ -90,11 +90,10 @@ public interface Tree<T> {
 	public void addNext(T Prev, T next);
 	public boolean isLeaf(T node);
 }
-
-</pre>
-
+{% endhighlight %}
 
 
+<br><br>
 LCRSTree.java
 <a class="btn btn-code" data-toggle="collapse" href="#tree">CODE</a>
 <div class="collapse_wrapper">
