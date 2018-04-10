@@ -90,6 +90,7 @@ public interface Tree<T> {
 	public void addNext(T Prev, T next);
 	public boolean isLeaf(T node);
 }
+
 </pre>
 
 
