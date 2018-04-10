@@ -201,6 +201,9 @@ CircularQueue.java
 <div class="card">
 {% highlight java %}
 
+
+package task.structure;
+
 public class CircularQueue implements Queue{
 
 	private int capacity = 0;
@@ -240,9 +243,8 @@ public class CircularQueue implements Queue{
 				System.out.println(myqueue.pop().toString());
 				System.out.println(myqueue.pop().toString());
 				System.out.println(myqueue.pop().toString());
-
-
 	}
+
 	@Override
 	public Object peek() {
 		// TODO Auto-generated method stub
@@ -261,7 +263,7 @@ public class CircularQueue implements Queue{
 	}
 
 	@Override
-	public void add(Object obj) {
+	public String add(Object obj) {
  		if(isFull()){
 			System.out.println("this queue is full of data");
 		}else{
@@ -272,7 +274,7 @@ public class CircularQueue implements Queue{
 
 			System.out.println("add" +  obj.toString() + "front : " +  this.Front + "   rear:  " + this.Rear);
 		}
-
+ 		return obj.toString();
 	}
 	@Override
 	public boolean isEmpty() {
@@ -284,7 +286,7 @@ public class CircularQueue implements Queue{
 		}
 
 	}
-	@Override
+
 	public boolean isFull() {
 		if(this.Rear== prev(this.Front)){
 			return true;
@@ -347,16 +349,11 @@ public class CircularQueue implements Queue{
 			return --num;
 		}
 	}
-	@Override
-	public Object delete() {
 
-		return null;
-	}
-	@Override
-	public void destroy() {
-		// TODO Auto-generated method stub
-	}
+
 }
+
+
 {% endhighlight %}
 </div>
 </div>
