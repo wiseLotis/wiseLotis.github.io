@@ -62,7 +62,7 @@ degree는 자식노드의 개수를 말한다.
 
 1. N-링크(N-Link) 표현법
 
-![트리 이미지](/assets/posts_con/tree/n-link.png)
+![트리 이미지](/assets/posts_con/tree/n-link.jpg)
 
 - 차수가 N인경우 노드가 N개의 링크를 가지고 있어 각각 자식 노드를 가리키도록 구성
 - 차수(degree) 가 노드마다 달라지는 트리에 적용이 어려움. (폴더 트리)
@@ -70,7 +70,7 @@ degree는 자식노드의 개수를 말한다.
 
 2. 왼쪽자식-오른쪽형제표현법(LCRS: Left Child Right Sibling)
 
-![트리 이미지](/assets/posts_con/tree/lcrs.png)
+![트리 이미지](/assets/posts_con/tree/lcrs.jpg)
 
 - 어느 한 노드의 자식노드를 얻기 위해서는 왼쪽 자식노드에 대한 정보만있으면 됨.
 이 자식노드에 대한 정보를 다 얻고, 오른쪽 형제 노드의 주소를 계속 얻으면 모든 자식 노드를 얻을 수 있음.
