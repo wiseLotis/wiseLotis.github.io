@@ -169,14 +169,15 @@ change2<->1
 </pre>
 
 
-삽입 정렬
+## 삽입 정렬
 
-삽입정렬을 구현해 보았다.
+설명...
+
 
 <a class="btn btn-code" data-toggle="collapse" href="#insert">CODE</a>
- 	<div class="collapse_wrapper">
- 		<div class="collapse" id="insert">
- 			<div class="card">
+<div class="collapse_wrapper">
+<div class="collapse" id="insert">
+<div class="card">
  {% highlight java %}
  public static void main(String[] args) {
 		int[] dataarr= {5,1,6,4,2,3};
@@ -212,6 +213,6 @@ change2<->1
    return arr;
  }
  {% endhighlight %}
- 			</div>
- 		</div>
- 	</div>
+</div>
+</div>
+</div>
