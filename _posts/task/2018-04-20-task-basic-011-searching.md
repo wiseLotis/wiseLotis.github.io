@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "BacktotheBasic - 소팅(버블정렬/삽입정렬)"
-subtitle: "자료구조-소팅"
-slug: "task-basic-010-sorting "
-description: "효율적인 정렬"
+title:  "BacktotheBasic - 탐색(순차탐색)"
+subtitle: "자료구조-탐색"
+slug: "task-basic-011-searching "
+description: "탐색"
 categories: task
 tags: [task, home]
 comments: true
