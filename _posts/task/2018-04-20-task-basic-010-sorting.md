@@ -190,7 +190,7 @@ change2<->1
 
 <a class="btn btn-code" data-toggle="collapse" href="#full">CODE</a>
 <div class="collapse_wrapper">
-<div class="collapse" id="fulls">
+<div class="collapse" id="full">
 <div class="card">
  {% highlight java %}
  package task.structure;
