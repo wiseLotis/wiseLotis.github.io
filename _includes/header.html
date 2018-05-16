@@ -51,10 +51,9 @@
 <script>
 	$(document).scroll(function(){
 		var height = document.getElementById("mynav").scrollHeight;
-  		if($(this).scrollTop() < height ){
-  			if($(".mynav").hasClass("under")){
-				$(".mynav").removeClass("under");
-			}
+		if($(this).scrollTop() < height ){
+      $(".mynav").removeClass("under");
+
 		}else{
 			if(!$(".mynav").hasClass("under")){
 				$(".mynav").addClass("under");
