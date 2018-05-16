@@ -49,7 +49,7 @@
 
 
 <script>
-	$(document).scroll(function(){
+	$(window).scroll(function(){
 		var height = document.getElementById("mynav").scrollHeight;
 		if($(this).scrollTop() < height ){
       $(".mynav").removeClass("under");
