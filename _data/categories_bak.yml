@@ -1,0 +1,39 @@
+
+- name: free
+  name_kor: free
+  desc: 자유게시판 아무거나..
+  permalink: /posts/free
+
+- name: task
+  name_kor: task
+  desc: 과제
+  permalink: /posts/task
+
+- name: tech
+  permalink: /posts/tech
+  subcategories:
+    - name: frontend
+      name_kor: frontend
+      desc: html, javascript, jquery, css, view....
+      permalink: /posts/frontend
+
+    - name: java
+      name_kor: java
+      desc: java
+      permalink: /posts/java
+      disable: true
+
+    - name: python
+      name_kor: python
+      desc: 재미있는 python
+      permalink: /posts/python
+
+    - name: django
+      name_kor: django
+      desc: python/Django를 이용한 웹페이지 만들기
+      permalink: /posts/django
+
+    - name: etc
+      name_kor: etc
+      desc: 기타
+      permalink: /posts/etc

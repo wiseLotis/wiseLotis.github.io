@@ -17,7 +17,7 @@ layout: home
 <!-- -->
 						<h2>{{post.title}}</h2>
 					</div>
-<!-- --> 
+<!-- -->
 					<span class="date">{{post.date | date: '%B %d, %Y'}}</span>
 <!-- -->
 				</div>
@@ -38,11 +38,11 @@ layout: home
 {% endfor %}
 		<div class="col-sm-4">
 			<ul class="home-postlist">
-				 
+
 {% else %}
-	<div class='col-sm-12'>	
+	<div class='col-sm-12'>
 		<ul class="home-postlist full_area">
-				
+
 {% endif %}
 			{% for post in site.tags["home"] limit:9 %}
 	<li>
@@ -52,7 +52,7 @@ layout: home
 								<img src="{% if post.image %} {{post.image}} {% else %} {{site.post_image}} {% endif %}"/>
 							</div>
 							<h3 class="post-title">{{post.title}}</h3>
-							<div class="post-description">{{post.description}}</div> 
+							<div class="post-description">{{post.description}}</div>
 						</a>
 				<!-- --><p class="post-date">
 				{{post.date | date: '%B %d, %Y'}}</p>
@@ -64,7 +64,7 @@ layout: home
 				<!-- --></div>
 				</li>
 				{% endfor %}
-				</ul> 
+				</ul>
 				<div class="btn-wrapper"><a href="/tags" class='btn btn-default'> 더 많은 포스트 보기</a></div>
 		</div>
 	</div>
