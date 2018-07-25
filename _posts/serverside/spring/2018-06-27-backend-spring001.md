@@ -1,6 +1,6 @@
 ---
 layout: post
-title : "오브젝트와 의존관계"
+title : "토비스프링 - 오브젝트와 의존관계"
 slug: "backend-spring001"
 subtitle: "토비 스프링 3.1 요약 vol.스프링의 원리와 이해 - 1장"
 description: ""
