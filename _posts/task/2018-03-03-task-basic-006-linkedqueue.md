@@ -5,7 +5,7 @@ subtitle: "LinkedList를 이용한 스택을 활용하여 계산기 만들어 �
 slug: "task-basic-006-linkedqueue"
 description: "링크드리스트를 이용한 링크드 큐 구현"
 categories: task
-tags: [task, home]
+tags: [task]
 comments: true
 image: "/assets/posts_con/cover_task.jpg"
 google: true

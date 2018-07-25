@@ -1,0 +1,92 @@
+
+<div class="col-sm-10 up_nav_area">
+  {% include up_nav.html %}
+</div>
+<div class="curtain"></div>
+<nav class="mynav" id="mynav">
+<div class="navlist_box">
+  <div class="logo_box">
+  <a class="logo {% if site.logo %} has-logo {% endif %}" href="/">{% if site.logo %} <img src="{{ site.logo | prepend: site.url }}"/> {% else %} wiseLotis {% endif %}</a>
+  </div>
+  <div class="btn btn-menu btn-up_nav_down">
+    <span class="stick"></span>
+    <span class="stick"></span>
+    <span class="stick"></span>
+  </div>
+  <ul class="navlist">
+
+   <!--  <li class="navitem">
+     <a class="navlink" href="/about">about</a>
+   </li> -->
+   <li class="navitem" data-name="wiseLotis">
+        <a class="navlink" href="/blog"> Home </a>
+      </li>
+      <li class="navitem" data-name="frontend">
+        <a class="navlink" href="#frontend"> FrontEnd </a>
+      </li>
+      <li class="navitem" data-name="serverside">
+        <a class="navlink" href="#serverside"> ServerSide </a>
+      </li>
+      <li class="navitem" data-name="tags">
+        <a class="navlink" href="#etc"> ETC. </a>
+      </li>
+      <li class="navitem" data-name="task">
+        <a class="navlink" href="#task"> Task </a>
+      </li>
+      <li class="navitem" data-name="tags">
+        <a class="navlink" href="/tags/"> tags </a>
+      </li>
+       <li class="navitem">
+        <a class="navlink" href="/about/">about</a>
+      </li>
+    <!-- <li class="nav-item">
+      <a class="nav-link disabled" href="#">Disabled</a>
+    </li> -->
+  </ul>
+</div>
+</nav>
+
+<div class="title_box indexnav">
+  <div class="inner_text">
+      <h3 class='blog_name'><a href="/blog">WiseLotis</a>:) </h3>
+  </div>
+
+   <span class="scrolldown_txt">ScrollDown .. </span>
+</div>
+
+
+
+
+<script>
+	$(window).scroll(function(){
+    var vh_100 = document.body.clientHeight;
+     if(document.body.scrollTop+62 > vh_100){
+      if(!$(".mynav").hasClass("under")){
+        $(".mynav").addClass("under");
+      }
+    }else{
+      $(".mynav").removeClass("under");
+    }
+
+	})
+
+  $(".btn-up_nav_down").click(function(){
+    $(".up_nav_area").animate({
+       height: "toggle"
+    }, 500, function(){})
+    $(".curtain").animate({
+      height:"toggle",
+      opacity:0.8
+    },0)
+  })
+
+  $(".curtain").on("click", function(){
+    $(".btn-up_nav_down").trigger("click");
+  });
+
+  $(".up_nav_area .btn-close_up_nav").on("click", function(e){
+    e.preventDefault();
+    $(".btn-up_nav_down").trigger("click");
+  })
+
+</script>

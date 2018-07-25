@@ -3,6 +3,7 @@
 body{
 	margin:0;
 	padding:0 !important;
+	position:relative;
  }
 .btn-blog_link{
 	color:#ffffff;
@@ -87,6 +88,7 @@ section{
 	height: 100vh;
 	background-color:$main-color;
 	color:#ffffff;
+	position:relative;
 	.title{
 		font-size:2em;
  	}
@@ -147,8 +149,8 @@ section{
 
 
 .site-footer{
+	position:absolute;
 		bottom: 0;
-	@include respond-to('small'){
-		bottom: 0;
-	}
+		width: 100%;
+		color:#ffffff !important;
 }

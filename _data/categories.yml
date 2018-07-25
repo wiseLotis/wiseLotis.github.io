@@ -3,3 +3,44 @@
   name_kor: free
   desc: 자유게시판 아무거나..
   permalink: /posts/free
+
+- name: task
+  name_kor: task
+  desc: 과제
+  permalink: /posts/task
+
+- name: frontend
+  name_kor: FrontEnd
+  desc: html, javascript, jquery, css, view....
+  permalink: /posts/frontend
+
+- name: serverside
+  name_kor: ServerSide
+  desc: java, spring ..
+  permalink: /posts/server_side
+  subcategories:
+  - name: java
+    name_kor: java
+    desc: JAVA~..
+    permalink: /posts/java
+  - name: spring
+    name_kor: SPRING
+    desc: 스프링프레임워크
+    permalink: /posts/spring
+
+- name: python
+  name_kor: Python
+  desc: 재미있는 python
+  permalink: /posts/python
+  disable: true
+  subcategories:
+  - name: django
+    name_kor: django
+    desc: python/Django를 이용한 웹페이지 만들기
+    permalink: /posts/django
+    disable: true
+
+- name: etc
+  name_kor: etc
+  desc: 기타
+  permalink: /posts/etc

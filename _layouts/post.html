@@ -4,12 +4,16 @@
   {% include includes.html %}
 </head>
 <body>
-  {% include header.html %}
+  {% include mynav.html %}
+  {% capture category_nm %}{{page.categories[0]}}{% endcapture %}
+
+  <div class="title_box">
+   <h2 class='category_name'><a href="/posts/{{category_nm}}"> {{category_nm}} </a></h2>
+  </div>
   <div class="content-wrapper">
     <div class="row">
-      <div class="col-sm-2 sidebar_wrapper">
+      <div class="col-sm-2 sidebar_wrapper hidden" >
         <div class="sidebar">
-          {% capture category_nm %}{{page.categories[0]}}{% endcapture %}
           <p class="category_nm"><a href="/posts/{{category_nm}}">{{category_nm}}</a></p>
           <ul>
             {% assign posts = site.categories[category_nm]|reverse  %}

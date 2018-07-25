@@ -5,7 +5,7 @@ subtitle: "LinkedList를 이용한 스택을 활용하여 계산기 만들어 �
 slug: "task-basic-004-LinkedListStack2"
 description: "폴리쉬표기법(후위표기법)을 사용하여 스택을 이용한 사칙연산 계산기 만들기"
 categories: task
-tags: [task, home]
+tags: [task]
 comments: true
 image: "/assets/posts_con/cover_task.jpg"
 google: true
