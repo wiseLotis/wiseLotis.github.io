@@ -5,20 +5,20 @@ body{
     background-color:$main-color;
 }
 .title_area{
-  padding: 15vh 0;
+  padding: 20vh 0;
   text-align:center;
-  background: url("/assets/milky-way.jpg") no-repeat center center;
+  background: url("/assets/blue.jpg") no-repeat center center;
   background-size: 100% auto;
   @include linkColor($main-color,$mute-main-color,$dark-main-color);
   @include respond-to('small'){
-    background-size: auto; 
+    background-size: auto;
   }
   a.title_txt{
     display: inline-block;
     padding: 0.5em 1.5em;
     font-size: 1.2em;
     border-radius: 2em;
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255,255,255,0.9);
   }
 }
 .container{

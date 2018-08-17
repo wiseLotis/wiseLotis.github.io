@@ -61,8 +61,8 @@
           {% include sub_nav.html %}
         </div>
       </div>
+      <div class='move_more_btn' title="더보기">
         <span><</span>
-        <div class='move_more_btn' title="더보기">
       </div>
     </div> <!--row-->
   </div>
@@ -72,10 +72,12 @@
     <script>
       $(document).ready(function(){
           $(".move_more_btn").on("click", function(){
-            $(".sub_nav_wrapper").removeClass("hidden");
+
+            $(this).toggleClass("active");
+            $(".sub_nav_wrapper").toggleClass("hidden");
+
           })
       })
     </script>
-    <script id="dsq-count-scr" src="//{{site.disqus-shortname}}.disqus.com/count.js" async></script>
-</body>
+ </body>
 </html>

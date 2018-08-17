@@ -2,10 +2,17 @@
 
 <head>
 	{% include includes.html %}
-	<link href="/css/home.css" rel="stylesheet">
+	<link href="/css/home.css" rel="stylesheet"/>
+
 </head>
 
 <body>
+	<style>
+	.title_area {
+		background:url("{{page.category_image}}") no-repeat center;
+		background-size: cover;
+	}
+	</style>
 	<nav class="navbar navbar-expand-sm navbar-light bg-light">
 		<a class="navbar-brand" href="#">WiseLotis</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

@@ -85,7 +85,7 @@
 	display: inline-block;
 	width: 100vw;
 	height: 30vh;
-	background: url("/assets/milky-way.jpg") no-repeat no-repeat;
+	background: url("/assets/home.jpg") no-repeat no-repeat;
 	background-size: cover;
 	background-position: center center;
 	position: relative;
@@ -93,7 +93,7 @@
 	@include ellipsis;
 	&.indexnav{
 		height: 100vh;
-		background: url("/assets/milky-way.jpg") no-repeat no-repeat;
+		background: url("/assets/home.jpg") no-repeat no-repeat;
 		background-size: cover;
 		background-position: center bottom;
 	}
