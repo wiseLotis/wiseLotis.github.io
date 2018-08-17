@@ -1,15 +1,73 @@
 <html>
+
 <head>
 	{% include includes.html %}
+	<link href="/css/home.css" rel="stylesheet">
 </head>
+
 <body>
-
-	{% include mynav_index.html %}
-	<div class="content-wrapper">
-		{{ content }}
+	<nav class="navbar navbar-expand-sm navbar-light bg-light">
+		<a class="navbar-brand" href="#">WiseLotis</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link active" href="/blog"> Home <span class="sr-only">(current)</span></a>
+				</li>
+				{% for category in site.data.categories %} {% if category.disable == nil %}
+				<li class="nav-item">
+					<a class="nav-link item-link" href="/blog/index_{{category.name}}">{{category.name}}</a>
+				</li>
+				{% endif %} {% endfor %}
+				<li class="nav-item">
+					<a class="nav-link item-link" href="/tags">tags</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link item-link" href="/about">about</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="title_area">
+		<a class="title_txt" href='{{page.category_link}}'>{{page.title}}</a>
 	</div>
+	<div class="container">
+		{% assign page_category = page.category %}
+		{% if page_category == "home" %}
 
-	{% include footer.html %}
+		{{content}}
 
+		{% else %}
+
+		<div class='area-contents' data-area='{{category.name}}'>
+			{% if site.categories[page_category].size >= 0 %}
+			<div class='up_control_box'>
+					<a href="{{page.category_link}}" class="up_category_link"> >>> 이 카테고리의 더 많은 Post 보기 </a>
+			</div>
+			<ul class='post_ul'>
+				{% for post in site.categories[page.category] limit:3 %}
+				<li class='post_li'>
+					<div class='post_container'>
+						<p class='post_title'>{{post.title}}</p>
+						<p class='post_contents'>{{post.content}}</p>
+						<a href="" class='post_more'> >>> 이 포스트 더보기 </a>
+					</div>
+				</li>
+				{% endfor %}
+				<ul>
+		</div>
+		<a href="{{page.category_link}}" class="category_link"> 이 카테고리의 더 많은 Post 보기 </a> {% else %}
+		<div class="area-contents nodata">
+			<p>이 카테고리에 post가 없습니다.</p>
+		</div>
+		{% endif %}
+		 {% endif %}
+	</div>
+	<script>
+		$(document).ready(function() {});
+	</script>
 </body>
+
 </html>

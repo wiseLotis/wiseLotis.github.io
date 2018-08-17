@@ -57,11 +57,10 @@ font-size:17px;
     &>ul{
         margin:0;
         li{
-            padding:10px 10px 10px 1em ;
+            padding: 5px 10px;
         }
     }
 		@include linkColor($sub-color, $sub-color, $main-color);
-
   }
  }
 

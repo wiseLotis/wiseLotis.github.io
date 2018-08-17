@@ -17,7 +17,7 @@
 - name: serverside
   name_kor: ServerSide
   desc: java, spring ..
-  permalink: /posts/server_side
+  permalink: /posts/serverside
   subcategories:
   - name: java
     name_kor: java
