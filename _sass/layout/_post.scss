@@ -1,116 +1,45 @@
 @charset "UTF-8";
-.content-wrapper{
-	max-width:100% !important;
-	padding:0 !important;
+body{
+	background-color:$main-color !important;
 }
 .contents{
 	margin:auto;
+	font-size: 13px;
+	margin: 5vh auto;
+	padding: 3vh 0;
 }
 .post-content{
-	font-size:0.9rem;
-	padding: 2em 1em;
-	background-color:#ffffffe3;
-	& *{
-		word-break:break-all;
-	}
-	ol{
-		padding-left:2em;
-	}
-	.page-heading {
-		font-size: 1.5rem;
-	}
-	.postbody{
-		padding: 1.5em 1em;
-		background-color:$base-color;
-		h2{
-			font-size:2em;
-		}
-		img{
-			box-shadow: 0 0 2px 1px $mute-sub-color;
-			margin: 1em 10% 1em 10%;
-			max-width: 80%;
-		}
-	}
-	.post-list {
-		margin-left: 0;
-		list-style: none;
-		li{
-			margin-bottom: 30px;
-		}
-	}
 
-	.post-meta {
-		font-size: 1em;
-		color: #828282;
+	.post-title{
+		color:#ffffff;
+		padding: 0 3vw;
 	}
-
-	.post-link {
-		display: block;
-		font-size: 1.8em;
-	}
-
-	.post-header {
-		margin-bottom: 30px;
-	}
-
-
-	.post-title {
-		font-size: 1.2em;
-		letter-spacing: -1px;
-		line-height: 1;
-	}
-
-	.post-content{
-		padding: 30px 0;
-		margin-bottom: 30px;
-		font-size: 1em;
-	}
-	.tagWrapper{
+	.post-date{
 		text-align:right;
+		padding-right:3vw;
+		color:$mute-color;
 	}
-	.post-tag{
-		&:before{
-			content: '#';
-			color: $main-color;
-		}
+	.post-body{
+		background-color: #ffffff;
+		padding: 20px 5vw;
+		.tag-wrapper{
+				.post-tag{
 
-	}
-}
-.select_container{
-	.btn_area{
-		margin-bottom:10px;
-		text-align:right;
-		.btn{
-			font-size:0.8rem;
-			color:$sub-color !important;
-			border:1px solid;
-		}
-		.btn.active{
-			color:#ffffff !important;
-			background-color:$sub-color;
-		}
-	}
-	.box_area{
-		.box{
-			display:none;
-		}
-	}
-}
-.ex-container{
-	width: 100%;
-	display:flex;    display:-webkit-flex;    display:-ms-flex;
-	justify-content: space-between;
-	-webkit-justify-content: space-between;
-	-ms-justify-content: space-between;
-	background-color:#ffffff;
-	padding:0.5em;
-	flex-wrap:wrap;
-	.half_area{
-		width:49%;
-		padding:0.5em;
-		@include respond-to('medium'){
-			width:100%;
-		}
-	}
+				}
+ 			&.nagative{
+				.post-tag{
 
+				}
+			}
+		}
+	}
+	/* 이전/다음포스트 */
+	.navi-btn-wrapper{
+		text-align:center;
+		@include linkColor(#ffffff,#ffffff,#ffffff);
+	}
+	.comments-wrapper{
+		background-color:#ffffff;
+		padding: 20px 3vw;
+	}
 }

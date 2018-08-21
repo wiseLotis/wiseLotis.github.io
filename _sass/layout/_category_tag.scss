@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
- body {
+body {
   font-size: 14px !important;
   @include respond-to('large') {
     font-size: 12px !important;
@@ -9,19 +9,23 @@
     font-size: 11px !important;
   }
 }
-.outer_contaner{
+
+.outer_contaner {
   overflow-x: hidden;
 }
+
 .cate-wrapper {
   padding: 20px 10px;
   max-width: 100%;
   margin: auto auto 30px;
 }
-.category_container{
-  margin:auto;
+
+.category_container {
+  margin: auto;
+
   .cat_tit_box {
-    .cat_img{
-      background: url(/assets/flower.jpg) no-repeat center center;
+    .cat_img {
+      background: url("/assets/flower.jpg") no-repeat center center;
       width: 100%;
       height: 5em;
       display: inline-block;
@@ -29,7 +33,8 @@
       top: 10px;
       z-index: -100;
     }
-    .cat_tit{
+
+    .cat_tit {
       font-size: 3em;
       display: inline-block;
       padding: 20px;
@@ -40,29 +45,49 @@
   }
 }
 
-
 .sub_nav_wrapper {
   @include respond-to('large') {
     display: none;
   }
-padding:0 !important;
-font-size:17px;
+  padding: 0 !important;
 
-  .nav-item.active{
-    background-color:$mute-main-color !important;
+  .nav-item.active {
+    background-color: $mute-main-color !important;
     @include linkColor(#ffffff,#ffffff,#ffffff);
+  }
 
-  }
- 	.sub_nav{
-    &>ul{
-        margin:0;
-        li{
-            padding: 5px 10px;
-        }
+  .sub_nav {
+    & > ul {
+      margin: 0;
+
+      li {
+        padding: 5px 10px;
+      }
     }
-		@include linkColor($sub-color, $sub-color, $main-color);
+    @include linkColor($sub-color, $sub-color, $main-color);
   }
- }
+}
+
+.sub_btn_area {
+  position: fixed;
+  display: inline-block;
+  @include linkColor(#ffffff,#ffffff,#ffffff);
+  @include linkDeco(none,none,none);
+  right: 0;
+  bottom: 45vh;
+
+  .more_btn {
+    background-color: black;
+    display: inline-block;
+    bottom: 5%;
+    width: 30px;
+    height: 50px;
+    font-size: 20px;
+    word-wrap: break-word;
+    padding: 10px 25px 10px 10px;
+    border-radius: 20px 0 0 20px;
+  }
+}
 
 .tag_name {
   color: $main-color;
@@ -88,7 +113,8 @@ font-size:17px;
   li {
     position: relative;
     padding-bottom: 1.5em;
-    &+li{
+
+    &+li {
       border-top: 1px solid $mute-sub-color;
     }
 
@@ -131,125 +157,7 @@ font-size:17px;
   }
 }
 
-.site-footer{
+.site-footer {
   padding: 0 20px;
   color: #ccc;
 }
-
-.move_more_btn{
-  display: inline-block;
-  position: fixed;
-  background-color: black;
-  color: #ffffff;
-  bottom: 5%;
-  width: 30px;
-  height: 50px;
-  font-size: 20px;
-  word-wrap: break-word;
-  padding: 10px 25px 10px 10px;
-  border-radius: 20px 0 0 20px;
-  right: 0px;
-
-}
-
-
-.sidetag{
-	display:inline-block;
- 	margin-top:50px;
- 	min-height:250px;
- 	border:1px solid $main-color;
- 	border-radius:10px;
-	position:fixed;
-	width:23%;
-	@include respond-to('small'){
-		width: 100%; margin:auto;
-		position:relative;
-		margin: 50px 0;
-	}
- 	padding:2em 1%;
-  margin-left:1%;
- 	h4{
- 		color:$main-color;
- 		display:inline-block;
- 		position:absolute;
- 		top: -0.5em;
- 		background-color: #ffffff;
- 		left: 1em;
- 		padding: 0 10px;
- 	}
- 	ul{
- 		margin:0;
-		li{
-			display:inline-block;
-			padding:10px;
-			&:hover, &:focus{
-	 			background-color:$sub-color;
-	 			border-radius:5px;
-	 			a{
-	 				color:#ffffff !important;
-	 				text-decoration:none;
-	 			}
-	 		}
-		}
- 	}
- 	[class^='tag_']{
- 		font-weight:800;
- 		font-size:2.5em;
- 		display:inline-block;
- 		color:$sub-color;
- 		&:hover, &:focus{
- 			background-color:$sub-color;
- 			border-radius:5px;
- 			a{
- 				color:#ffffff !important;
- 				text-decoration:none;
- 			}
- 		}
- 	}
-
- 	.tag_{
- 		&1{
- 			font-weight:400;
- 			font-size:1.1em;
- 			a{
- 				color:$main-color !important;
- 			}
- 		}
- 		&2{
- 			font-weight:400;
- 			font-size:1.3em;
- 			a{
- 				color:$sub-color !important;
- 			}
- 		}
- 		&3{
- 			font-weight:400;
- 			font-size:1.5em;
- 			a{
- 				color: $dark-main-color !important;
- 			}
- 		}
- 		&4{
- 			font-weight:600;
- 			font-size:1.8em;
- 			a{
- 				color:$main-color !important;
- 			}
- 		}
- 		&5{
- 			font-weight:600;
- 			font-size:2.0em;
- 			a{
- 				color:$sub-color !important;
- 			}
- 		}
- 		&6{
- 			font-weight:600;
- 			font-size:2.2em;
- 			a{
- 				colot:$dark-main-color !important;
- 			}
- 		}
- 	}
-
- }

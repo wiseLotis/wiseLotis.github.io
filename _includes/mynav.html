@@ -1,9 +1,17 @@
+<style>
+{% if page.img_url != nil %}
+  .title-box .title-text{
+    background: url("{{page.img_url}}") no-repeat no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+{% endif %}
+</style>
 
 <div class="col-sm-10 up_nav_area">
   {% include up_nav.html %}
 </div>
 <div class="curtain"></div>
-
 <nav class="mynav" id="mynav">
 <div class="navlist_box">
   <div class="logo_box">
@@ -38,6 +46,9 @@
 </div>
 </nav>
 
+<div class="title-box">
+ <h2 class='title-text'><span class='category_nm'>{% if page.categories == nil %} {{ page.category }} {% else %} {{page.categories}} {% endif %}</span></h2>
+</div>
 
 <script>
 	$(window).scroll(function(){

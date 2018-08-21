@@ -1,3 +1,6 @@
+<!-- <div class="col-sm-2 sub_nav_wrapper hidden"> -->
+<div class="sub_nav_wrapper">
+<div class="sub_nav hidden">
 <ul class="nav nav-pills flex-column">
 		{% for category in site.data.categories %}
 			{% if category.disable == nil %}
@@ -26,5 +29,23 @@
 		 <a class="navlink" href="/about/">about</a>
 	 </li>
 	</ul>
+</div>
+<div class="sub_btn_area">
+	<a class='more_btn' href="" title="더보기">
+		<span class='arrow-left'> < </span>
+		<span class='arrow-right hidden'> > </span>
+	</a>
+</div>
+</div>
+
 	<script>
+		$(document).ready(function(){
+				$(".sub_btn_area> .more_btn").on("click", function(e){
+					e.preventDefault();
+					$(this).toggleClass("active");
+					 $(this).children(".arrow-left, .arrow-right").toggleClass("hidden");
+					$(".sub_nav").toggleClass("hidden");
+					$(".sub_nav_wrapper").toggleClass("col-sm-2");
+				})
+		})
 	</script>

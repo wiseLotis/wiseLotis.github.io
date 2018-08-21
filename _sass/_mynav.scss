@@ -77,53 +77,26 @@
 }/*mynav*/
 
 /* index에서 사용하는 title_box */
-.title_box {
-	color: #ffffff !important;
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-	display: inline-block;
-	width: 100vw;
-	height: 50vh;
-	background: url("/assets/home.jpg") no-repeat no-repeat;
-	background-size: cover;
-	background-position: center center;
-	position: relative;
-	word-break: break-all;
-	@include ellipsis;
-	&.indexnav{
-		height: 100vh;
+.title-box {
+	@include linkColor(#ffffff,#ffffff,#ffffff);
+
+	.title-text{
+		display:inline-block;
 		background: url("/assets/home.jpg") no-repeat no-repeat;
 		background-size: cover;
-		background-position: center bottom;
-	}
-
-
-	.inner_text {
-		position: absolute;
-			top: 20vh;
-			height: 70vh;
-			right: 0;
-			text-align: center;
-			font-size: 3em;
-			margin-bottom: 0.5em;
-			width: 100%;
-			padding: 80px 30px;
-			//background-color: rgba(96,76,141,0.52);
-		@include linkColor(#ffffff,#ffffff,#ffffff);
-	}/*blog_name*/
-	.category_name{
-		position:absolute;
-		bottom: 5px;
-		right: 5vw;
-		@include linkColor(#ffffff,#ffffff,#ffffff);
-	}
-	.scrolldown_txt{
-		position:absolute;
-		bottom: 10px;
+		background-position: center center;
+		padding: 25vh 10vw 30vh;
+		color: #ffffff;
+		text-align: center;
 		width: 100vw;
-		text-align:center;
-	}
+		text-shadow: 3px 3px 5px #212529;
+			& span.category_nm{
+				padding: 10px 20px;
+				background-color:rgba(0,0,0,0.5);
+				border-radius: 50px;
+			}
+		}
+
 }/*title_box*/
 
 

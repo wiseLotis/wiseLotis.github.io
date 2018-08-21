@@ -59,7 +59,8 @@
 					<div class='post_container'>
 						<p class='post_title'>{{post.title}}</p>
 						<p class='post_contents'>{{post.content}}</p>
-						<a href="" class='post_more'> >>> 이 포스트 더보기 </a>
+						<a href="" class='post_open'> > 이 포스트 더보기 </a>
+						<a href="" class='post_fold hidden'> 접기 </a>
 					</div>
 				</li>
 				{% endfor %}
@@ -73,7 +74,21 @@
 		 {% endif %}
 	</div>
 	<script>
-		$(document).ready(function() {});
+		$(document).ready(function() {
+
+	          $(".post_open").on("click", function(e){
+	            e.preventDefault();
+ 	            var $target = $(this).parents(".post_container");
+	            $target.toggleClass("open");
+							$(this).toggleClass("hidden");
+							$(this).siblings(".post_fold").toggleClass("hidden");
+	          })
+						$(".post_fold").on("click", function(e){
+							e.preventDefault();
+								$(this).siblings(".post_open").trigger("click");
+						});
+
+		});
 	</script>
 </body>
 

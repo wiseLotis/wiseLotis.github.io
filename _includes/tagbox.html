@@ -1,17 +1,19 @@
 <head>
 <script src = "/js/greensock/TweenMax.min.js"></script>
 </head>
- 
+
+<div class='tag-box'>
+<h4>Tags</h4>
 <ul class="tag-cloud">
 {% for tag in site.tags %}
  {% if tag.first != "home" and tag.first != "headpost" %}
- 	  <li class="tag tag_{{ tag | last | size | divided_by: site.tags.size | plus: 1}}">
+ 	  <li class="tag tag_{{ tag | last | size | times:10 | divided_by: site.tags.size | round | plus:1}}">
 	    <a href="/tags/{{ tag | first | slugize }}">{{ tag | first }}</a>
 	  </li>
-	  {% endif %}
+  {% endif %}
  {% endfor %}
 </ul>
-
+</div>
 
 <script>
   $(document).ready(function(e){

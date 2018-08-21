@@ -9,13 +9,13 @@ body{
 		font-size:15px;
 	}
 	@include respond-to('large'){
-		font-size:15px;
+		font-size:14px;
 	}
 	@include respond-to('medium'){
-		font-size:14vh;
+		font-size:13px;
 	}
 	@include respond-to('small'){
-		font-size:13vh;
+		font-size:12px;
 	}
 }
 *{
@@ -25,7 +25,19 @@ body{
 img{
 	display: inline-block;
 	width: 100%;
+	&.img_max400{max-width:400px;}
+	&.img_max500{max-width:500px;}
+	&.img_max600{max-width:600px;}
+	&.img_max700{max-width:700px;}
+	&.img_max800{max-width:800px;}
+
 }
+.h1, h1{font-size: 2em;}
+.h2, h2{font-size: 1.9em;}
+.h3, h3{font-size: 1.75em;}
+.h4, h4{font-size: 1.5em;}
+.h5, h5{font-size: 1.25em;}
+.h6, h6{font-size: 1.1em;}
 
 .content-wrapper{
 	@include respond-to("small"){

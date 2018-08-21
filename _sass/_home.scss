@@ -53,28 +53,36 @@ body{
 .post_ul{
   .post_li+.post_li{
     border-top: 0.5px solid $mute-sub-color;
+    margin-top: 4vh;
   }
   .post_li{
     background-color: #ffffff;
-    height: 80vh;
-    padding: 4vh 2vw 10vh 2vw;
+     padding: 4vh 2vw 6vh 2vw;
     position: relative;
     &:nth-child(2n){
       background-color:rgba(255,255,255,0.9);
     }
     .post_container{
-      height: 64vh;
+      height: 70vh;
       overflow: hidden;
       padding-bottom: 10px;
       border-bottom: 0.5px solid $mute-sub-color;
+      &.open{
+        height:auto;
+      }
       .post_title{
         font-size: 1.5em;
        }
-      .post_more{
+      .post_open, .post_fold{
         position: absolute;
-        bottom: 6vh;
+        bottom: 2vh;
         right: 1vw;
       }
     }
   }
 }
+
+.home-container{
+     background-color:#ffffff;
+    padding: 10px 1vw; 
+ }
