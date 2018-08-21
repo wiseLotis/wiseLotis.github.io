@@ -11,12 +11,12 @@ permalink: /about/
 </div>
 <section id="say_hello">
   <p class="greeting"></p>
-  <div class="hello_area">
+  <!-- <div class="hello_area">
 안녕하세요.<br> 도전을 두려워하지 않는 <span class="strong_1">프로열정러</span><br>
 <span class="strong_2">개발자 유수연</span>입니다.
   </div>
   <img src="/assets/me.gif" alt="유수연사진"/>
-  <span class="scrollinfo">Scroll▼</span>
+  <span class="scrollinfo">Scroll▼</span> -->
 </section>
 
 <section id="introduce">
