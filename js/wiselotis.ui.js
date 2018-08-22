@@ -1,10 +1,26 @@
- 
 
+$.fn.customTags = function(){
+  // folditem
+  var $this = $(this);
+  var $foldbtns = $this.find(".fold-btn");
+  $foldbtns.on("click", function(e){
+    e.preventDefault();
+    $(this).toggleClass("active");
+    if($(this).hasClass("active")){
+      $(this).html($(this).data("fold"));
+    }else{
+      $(this).html($(this).data("open"));
+    }
+    var $target =$(this).siblings(".fold-contents[data-area='"+$(this).data("area")+"']");
+    $target.slideToggle();
+  })
+}
  $.fn.selectArea = function(){
 	 var $this = $(this);
 	 var $arealink = $this.find(".area_link");
 
 	 $arealink.on("click"	, function(e){
+     debugger;
 		 e.preventDefault();
  		 if($(this).hasClass("active")){
 			 return false;

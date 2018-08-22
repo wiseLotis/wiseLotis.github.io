@@ -14,16 +14,8 @@
 
 <body>
   	{% include mynav.html %}
-    <div class="title_box">
-     <h2 class='category_name'>{{page.title}}</h2>
-    </div>
   <div class='content-wrapper'>
     <div class="row">
-      <div class="col-sm-3 subtags_wrapper">
-        <div class="sidetag">
-          {% include sub_tags.html %}
-        </div>
-      </div>
       <div class='col-sm-9 category_container'>
           <ul class="post-preview">
             {% for post in site.tags[page.tag] %}
@@ -61,16 +53,22 @@
           </li>
           {% endfor %}
         </ul>
-
        </div>
-      <div class="col-sm-2 sub_nav_wrapper hidden">
-        <div class="sub_nav">
-          {% include sub_nav.html %}
+       <div class="col-sm-3 subtags_wrapper">
+         <div class="sidetag">
+           {% include sub_tags.html %}
+         </div>
+       </div>
+
+        <!-- <div class="col-sm-2 sub_nav_wrapper hidden">
+          <div class="sub_nav">
+            {% include sub_nav.html %}
+          </div>
         </div>
-      </div>
+
         <span><</span>
         <div class='move_more_btn' title="더보기">
-      </div>
+      </div> -->
     </div> <!--row-->
   </div>
 

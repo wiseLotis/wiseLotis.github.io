@@ -4,7 +4,6 @@
 }
 
 .tag-box{
-
   .tagbox-wrapper.negative &{
     color:#ffffff;
     @include linkColor(#ffffff,#ffffff,#ffffff);
@@ -15,7 +14,12 @@
     position: relative;
     margin: 50px 0;
   }
+  .tit{
+    font-size: 1.2em;
+    font-weight: 600;
+  }
   .tag-cloud{
+    font-size:0.9em;
     .tag{
       display:inline-block;
     }

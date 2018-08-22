@@ -47,7 +47,14 @@
 </nav>
 
 <div class="title-box">
- <h2 class='title-text'><span class='category_nm'>{% if page.categories == nil %} {{ page.category }} {% else %} {{page.categories}} {% endif %}</span></h2>
+ <h2 class='title-text'><span class='category_nm'>
+  <!-- post일떄 -->
+  {% if page.categories != nil %}
+  {{ page.categories | first }}
+  {% else %}
+  {{ page.title }}
+  {% endif %}
+</span></h2>
 </div>
 
 <script>

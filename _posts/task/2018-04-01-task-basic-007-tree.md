@@ -9,6 +9,7 @@ tags: [task, home]
 comments: true
 image: "/assets/posts_con/cover_task.jpg"
 google: true
+feed: true
 sitemap :
  changefreq: daily
  priority: 1.0

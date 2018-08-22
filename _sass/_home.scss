@@ -9,6 +9,8 @@ body{
   text-align:center;
   background: url("/assets/blue.jpg") no-repeat center center;
   background-size: 100% auto;
+  position:relative;
+
   @include linkColor($main-color,$mute-main-color,$dark-main-color);
   @include respond-to('small'){
     background-size: auto;
@@ -19,6 +21,19 @@ body{
     font-size: 1.2em;
     border-radius: 2em;
     background-color: rgba(255,255,255,0.9);
+  }
+  .feed-btn-wrapper{
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: right;
+
+    a.feed-btn{
+      padding:5px 5px;
+      background-color: rgba(248, 249, 250, 0.6901960784313725);
+      margin-left: 5px;
+      border-radius: 10px;
+    }
   }
 }
 .container{
@@ -83,6 +98,15 @@ body{
 }
 
 .home-container{
-     background-color:#ffffff;
-    padding: 10px 1vw; 
- }
+    background-color:#ffffff;
+    padding: 10px 1vw;
+    margin: 10px auto;
+
+  &>.tit + * {
+    padding: 5px 2vw 10px;
+    font-size: 0.8em;
+  }
+
+
+
+}

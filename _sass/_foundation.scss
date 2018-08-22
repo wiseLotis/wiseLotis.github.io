@@ -39,8 +39,47 @@ img{
 .h5, h5{font-size: 1.25em;}
 .h6, h6{font-size: 1.1em;}
 
+.tit{
+	font-weight: 600;
+	font-size: 1.2em;
+}
 .content-wrapper{
 	@include respond-to("small"){
 		padding:20px !important;
+	}
+}
+
+.fold-btn-wrapper{
+	text-align:right;
+	.fold-btn{
+		font-size: 1.2em;
+		font-weight: 600;
+	}
+	.fold-contents{
+		font-weight:400; 
+	}
+}
+
+.postlist-wrapper{
+	.postlist{
+		text-align:left; s
+			.post + .post{
+				margin-top : 5px ;
+				padding-top: 10px;
+				border-top: 1px solid $mute-sub-color;
+			}
+			.date{
+				float:right;
+				color: $mute-color;
+			}
+			.category{
+				color: $sub-color;
+				& + &{
+					margin-left: 1vw;
+					&::before{
+						content: "/";
+					}
+				}
+			}
 	}
 }
