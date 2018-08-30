@@ -27,9 +27,13 @@ body{
 				&+&{
 					margin-left: 1em;
 				}
+				a{
+					@include linkColor($sub-color,$main-color,$dark-sub-color);
+				}
 				a::before{
 					content:"#";
 				}
+
 			}
  			&.nagative{
 				.post-tag{
@@ -41,12 +45,16 @@ body{
 	/* 이전/다음포스트 */
 	.navi-btn-wrapper{
 		text-align:center;
-		@include linkColor(#ffffff,#ffffff,#ffffff);
+
 		.prev, .next{
 				font-size: 1.2em;
 				font-weight: 600;
 				padding: 5px 10px 5px 15px;
     		border: 1px solid;
+				&a {
+					@include linkColor(#ffffff,#ffffff,#ffffff);
+				}
+
 		}
 		.prev{
 			border-radius: 30px 0 0 30px;
@@ -62,10 +70,12 @@ body{
 	.fold-btn-wrapper{
 		margin-top: 10px;
 		@include linkColor(#ffffff,#ffffff,#ffffff);
+
+
 	}
 	.postlist-wrapper{
 		font-size:0.8em;
-		@include linkColor($main-color,$mute-main-color,$dark-main-color);
+		@include linkColor($main-color,$lite-main-color,$dark-main-color);
 		background-color:#ffffff;
 		padding: 10px 2vw;
 	}

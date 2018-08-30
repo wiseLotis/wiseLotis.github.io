@@ -1,11 +1,9 @@
 ---
-layout: home
+layout: category
 title: Wiselotis
-permalink: /blog/
+permalink: /home
 category: home
-category_link: /blog/
 category_image : /assets/category/home.jpg
-post_list: all
 ---
 
 <div class='row'>
@@ -25,15 +23,17 @@ post_list: all
     <ul class="postlist" data-category='{{category_nm}}'>
          {% assign postlist = site.posts %}
          {% for post in postlist | limit: 10 | sort: 'date' %}
-          <li class="post" title='{{post.subtitle}}'>
-            <a href='{{ site.baseurl }}{{post.url}}'>
-              {% for category in post.categories %}
-              <span class="category"> [ {{category}} ] </span>
-              {% endfor %}
-          <span class="tit">{{post.title}}</span>
-          <span class="date">{{post.date | date: "%B %-d, %Y"}}</span>
+
+          <li class="post" >
+            <a href="{{post.url}}" title='{{post.subtitle}}' class="post-link">
+              <span class="tit">  {% for category in post.categories %}
+                <span class="category"> [ {{category}} ] </span>
+                {% endfor %} {{post.title}}</span>
+              <span class="desc">{{post.description}}</span>
+              <span class="date">{{post.date | date: '%B %d, %Y'}}</span>
             </a>
           </li>
+
         {% endfor %}
        </ul>
     </div>

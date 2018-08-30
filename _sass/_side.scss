@@ -1,7 +1,7 @@
 @charset "UTF-8";
 .sidebar_wrapper{
 	padding:0 !important;
-	border-bottom:1px solid $mute-main-color;
+	border-bottom:1px solid $lite-main-color;
 }
 .sidebar{
 	padding:20px 0;
@@ -9,9 +9,9 @@
 	    padding: 20px 10px;
 	    margin-top: -20px;
 	    background-color: #604c8d;
-	    color: #ffffff;
+	    color: $bg-color;
 	    font-size: 1.3em;
-	     @include linkColor(#ffffff, #ffffff, #ffffff);
+	     @include linkColor($bg-color, $bg-color, $bg-color);
 	}
 	ul{
 		margin:0;
@@ -29,9 +29,9 @@
 			width:100%;
  		  }
  		  &.active{
- 		  	background-color:$mute-main-color;
+ 		  	background-color:$lite-main-color;
  		  	font-size:1.1rem;
- 		     @include linkColor(#ffffff, #ffffff, #ffffff);
+ 		     @include linkColor($bg-color, $bg-color, $bg-color);
  		  }
  		}
 	}
@@ -40,9 +40,9 @@
 	.nav{
 		font-size:16px;
 		li.active{
-		 		  	background-color:$mute-main-color;
+		 		  	background-color:$lite-main-color;
 		 		  	font-size:1.1rem;
-		 		     @include linkColor(#ffffff, #ffffff, #ffffff);
+		 		     @include linkColor($bg-color, $bg-color, $bg-color);
  		}
 		.sub_ul{
 			font-size:0.8em;

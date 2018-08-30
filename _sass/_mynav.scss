@@ -45,12 +45,18 @@
 				text-align: right;
 				position: relative;
 				@include respond-to('small') {}
-				@include linkColor(#ffffff,#ffffff, #ffffff);
-				@include linkDeco(none, none, none);
-
-				a:focus,
-				a:hover {
-					font-size: 1.3em;
+				a{
+					@include linkColor(#ffffff,#ffffff, #ffffff);
+					@include linkDeco(none, none, none);
+					&:focus, &:hover{
+						font-size: 1.3em;
+					}
+					&.navlink{
+						display: inline-block;
+					}
+				}
+				&.active > a {
+					border-bottom: 4px solid rgba(255,255,255,0.8);
 				}
 
 				.drop_navlist {
@@ -63,13 +69,6 @@
 					}
 				}
 
-				a.navlink {
-					display: inline-block;
-				}
-
-				&.active > a {
-					border-bottom: 4px solid rgba(255,255,255,0.8);
-				}
 			}/*li.navitem*/
 		}/*ul*/
 	}/*navlist_box*/
@@ -110,7 +109,7 @@
 	 	top:0;
 	 	right:0;
 		padding: 80px 10px 0;
-		border-bottom: 1px solid $mute-main-color;
+		border-bottom: 1px solid $lite-main-color;
 
 		&>ul{
 			margin:0;
@@ -120,17 +119,17 @@
 	    border-radius: 10px;
 	    color: #ffffff !important;
 			&>li{
- 				@include linkColor($mute-sub-color, $mute-sub-color , $mute-sub-color);
+ 				@include linkColor($lite-sub-color, $lite-sub-color , $lite-sub-color);
 
 			}
 		.sub_ul{
 				padding:20px;
 				font-size:0.9em;
 				margin-top:0.5em !important;
-				border: 1px solid $mute-main-color;
+				border: 1px solid $lite-main-color;
 				border-radius: 10px;
 				margin:0;
-				@include linkColor($mute-sub-color, $mute-sub-color , $mute-sub-color);
+				@include linkColor($lite-sub-color, $lite-sub-color , $lite-sub-color);
 
 			}
 		}

@@ -7,7 +7,7 @@ permalink: /about/
 <script src = "/js/greensock/plugins/TextPlugin.min.js"></script>
 <link rel="stylesheet" href="/css/about.css" />
 <div>
-<a href="/blog" class="btn-blog_link">Go to Blog..</a>
+<a href="/home" class="btn-blog_link">Go to Blog..</a>
 </div>
 <section id="say_hello">
   <p class="greeting"></p>

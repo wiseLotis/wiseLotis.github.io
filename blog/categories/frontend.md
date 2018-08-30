@@ -1,8 +1,7 @@
 ---
-layout: home
+layout: category
 title: 프론트엔드
-permalink: /blog/index_frontend
+permalink: /frontend
 category: frontend
-category_link: /posts/frontend
 category_image : /assets/category/frontend.jpg
 ---

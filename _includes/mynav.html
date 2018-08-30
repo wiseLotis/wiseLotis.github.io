@@ -47,14 +47,15 @@
 </nav>
 
 <div class="title-box">
- <h2 class='title-text'><span class='category_nm'>
+ <h2 class='title-text'>
   <!-- post일떄 -->
   {% if page.categories != nil %}
-  {{ page.categories | first }}
+  {% capture category_nm %}{{ page.categories | first }} {% endcapture %}
+  <a href="/posts/{{category_nm}}" class="category_nm">{{category_nm}}</a>
   {% else %}
-  {{ page.title }}
+  <span class='category_nm'>  {{ page.title }} </span>
   {% endif %}
-</span></h2>
+</h2>
 </div>
 
 <script>

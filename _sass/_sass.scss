@@ -1,15 +1,16 @@
 @charset "UTF-8";
 
+$bg-color:#ffffff;
 $main-color:#26292c;
-$mute-main-color:#9385b2; /*어두운 연보라?*/
+$lite-main-color:#bec7d0;
 $dark-main-color:#20045a;
-$sub-color:#7c13e5;
-$mute-sub-color: #d8c7fd; /*연보라*/
+$sub-color:#6827a7;
+$lite-sub-color:#dbb5ff;
+$dark-sub-color: #27014b;
+$base-color:#f7f4ff; // 밝은 sub
 $mute-color:#828282; /* 회색 */
-$base-color:#f7f4ff;
 $fc-color:#26292c;
-$em-fc-color:#cf1b27;
-$link-fc-color:#2e9fff;
+$em-fc-color:#d75a62;
 $dark-fc-color:#523e7c;
 $overflow_hid:hidden;
 $breakpoints: (
@@ -44,24 +45,24 @@ $breakpoints: (
 }
 
 @mixin linkColor($common, $focus, $visited){
-	a, a:-webkit-any-link {
+	&, &:-webkit-any-link {
 		color:$common !important;
 	}
-	a:hover, a:focus{
+	&:hover, &:focus{
 		color:$focus !important;
 	}
-	a:visited {
+	&:visited {
 		color:$visited !important;
 	}
 }
 @mixin linkDeco($common, $focus, $visited){
-	a, a:-webkit-any-link {
+	&, &:-webkit-any-link {
 		text-decoration:$common !important;
 	}
-	a:hover, a:focus{
+	&:hover, &:focus{
 		text-decoration:$focus !important;
 	}
-	a:visited {
+	&:visited {
 		text-decoration:$visited !important;
 	}
 }

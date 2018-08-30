@@ -3,76 +3,63 @@ layout: basic
 permalink: /tags/
 title: tags
 ---
+
 <head>
 <style>
   .content-wrapper{
      max-width:100% !important;
+     padding: 20px 5vw;
    }
 </style>
 <script src = "/js/greensock/TweenMax.min.js"></script>
 
 </head>
-<script>
-  $(document).ready(function(){
-     $(".navitem").removeClass("active");
-    $(".navitem").filter("[data-name='tags']").addClass("active");
-  })
-</script>
 
-<link href="/css/category_tag.css" rel="stylesheet">
+<link href="/css/category.css" rel="stylesheet">
+
   <div class="row">
-    <div class="col-sm-3 subtags_wrapper">
-      <div class="sidetag">
-        {% include sub_tags.html %}
-      </div>
-    </div>
-    <div class="col-sm-9 content-wrapper" style="border-top: 1px solid #f1f1f1 ">
+  <div class="col-sm-4">
+    <aside class='tagbox-wrapper negative'>
+         {% include tagbox.html %}
+     </aside>
+  </div>
+    <div class="col-sm-8 tag-content-wrapper negative" style="border-top: 1px solid #f1f1f1 ">
       {% for tag in site.tags %}
       {% capture tag_name %}{{ tag | first }}{% endcapture %}
       {% if tag_name != "home" and tag_name != "headpost" %}
       <div class="tag_name MT30">
-        <span>Posts related to </span><h2>{{tag_name}} </h2>
+        <span>Posts related to </span><h3>{{tag_name}} </h3>
       </div>
-      <ul class="post-preview">
+      <ul class="postlist">
         {% for post in site.tags[tag_name] %}
-        <li>
-          <a href="{{ post.url | prepend: site.baseurl }}" ><div class="row">
-            <div class='col-sm-4'>
-              <span class="post-title">
-                {{ post.title }}
-              </span>
-              {% if post.subtitle %}
-              <p class="post-subtitle">
-                {{ post.subtitle }}
-              </p>
-              {% endif %}
-
-            </div>
-            <div class='col-sm-8 '>
+        <li class="post">
+          <a href="{{ post.url | prepend: site.baseurl }}" >
+          <div class="row">
+            <span class="tit col-sm-12"   {% if post.subtitle %} title="{{ post.subtitle }}" {% endif %}>
+              {{ post.title }}
+            </span>
               {% if post.description %}
+              <div class='col-sm-8'>
               <span class="post-description">
                 {{ post.description }}
               </span>
-              {% endif %}
             </div>
-          </div>
-          <p class="post-meta">
-            Posted by
-            {% if post.author %}
-            {{ post.author }}
-            {% else %}
-            {{ site.title }}
             {% endif %}
-            on {{ post.date | date: "%B %-d, %Y" }}
-          </p>
+            <span class="date col-sm-4">
+               {{ post.date | date: "%B %-d, %Y" }}
+            </span>
+          </div>
+
         </a>
       </li>
 
       {% endfor %}
     </ul>
     {% endif %}
+
 {% endfor %}<!-- <p class="subtitle">Posts related to: {{ page.title }}</p>
 -->
+
 </div>
 </div>
 </div>

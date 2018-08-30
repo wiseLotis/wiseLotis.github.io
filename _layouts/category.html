@@ -1,62 +1,225 @@
 <html>
 
 <head>
-  <link href="/css/category_tag.css" rel="stylesheet">
-   {% include includes.html %}
+	{% include includes.html %}
+	<link href="/css/category.css" rel="stylesheet" />
 </head>
 
 <body>
-  	{% include mynav.html %}
+	<style>
+		.title_area {
+			background:url("{{page.category_image}}") no-repeat center;
+			background-size: cover;
+		}
+	</style>
+	{% include top_nav_bs.html %}
+	{% assign page_category = page.category %}
+	<div class="title_area">
+		{% unless page_category == "home" %}
+ 		<a class="title_txt" href='/{{page_category}}'>{{page.title}}</a>
+		{% endunless %}
+		<div class="feed-btn-wrapper">
+			<a href="/feed.xml" class="feed-btn" title='이블로그의 피드 받기'><i class="fas fa-rss-square"></i> wiselotis
+			</a> {% if page_category != "home"%}
+			<a href="/feed/{{page_category}}.xml" class="feed-btn" title='{{page_category}} 카테고리의 피드 받기'><i class="fas fa-rss-square"></i> {{page_category}}
+			</a> {% endif %}
+		</div>
+	</div>
+	<div class="container">
+		{% if page_category == "home" %}
+		 {{content}}
+		{% else %}
+		<div class="select-area-wrapper">
+			{% unless site.categories.[page.category] | size > 0 %}
+			<p class="NODATA negative MT50">No posts in this tags at this time.</p>
+			{% endunless %}
 
-  <div class='content-wrapper'>
-    <div class="row">
-      <div class='col-sm-10 category_container'>
-        <div class="cate-wrapper">
-          {% unless page.content == '' %}
-          <p>{{ page.content }}</p>
-          {% endunless %} {% unless site.categories.[page.category] | size > 0 %}
-          <p class="noposts MT50">No posts in this tags at this time.</p>
-          {% endunless %}
+			{% if site.categories.[page.category] | size > 0 %}
+			<div class="btn-wrapper">
+				<a class="btn area-link active" href="" data-area="block"><i class="fas fa-expand"></i> 크게보기</a>
+				<a class="btn area-link " href="" data-area="list"><i class="fas fa-align-justify"></i> 목록</a>
+			</div>
+			<div class='area-contents active' data-area='block'>
+				<div class="postblock-wrapper">
+					<ul class='post_ul'>
+						{% for post in site.categories[page.category] limit:3 %}
+						<li class='post_li'>
+							<div class='post_container'>
+								<p class='post_title'>{{post.title}}</p>
+								<p class='post_contents'>{{post.content}}</p>
+								<a href="" class='post_open'> > 이 포스트 더보기 </a>
+								<a href="" class='post_fold hidden'> 접기 </a>
+							</div>
+						</li>
+						{% endfor %}
+						<ul>
+				</div>
+				<a href="" class="btn-more-post" data-limit="3" data-start-no="3"> [{{page_category}}]의 더 많은 Post 보기 </a>
+			</div>
+			<div class="area-contents" data-area="list">
+				<div class='postlist-wrapper'>
+					<ul class="postlist" id="list">
+						{% assign postsize = site.categories.[page.category] | size %}
+						{% assign pagesize = 10 %}
+						{% assign totalpage =  postsize | divided_by: pagesize %}
+						{% if postsize > totalpage | times: pagesize %}
+						{% assign totalpage = totalpage | plus: 1 %}
+						{% endif %}
+ 						{% for post in site.categories[page.category] limit:pagesize %}
+						<li class="post">
+							<a href="{{post.url}}" title='{{post.subtitle}}' class="post-link">
+								<span class="tit">{{post.title}}</span>
+								<span class="desc">{{post.description}}</span>
+								<span class="date">{{post.date | date: '%B %d, %Y'}}</span>
+							</a>
+						</li>
+						{% endfor %}
+					</ul>
+					<div class="pagination-wrapper">
+						<ul class="pagination" data-post-size="{{postsize}}" data-target="#list">
+									<!-- <li class="page-item">
+										<a class="page-link" href="#" aria-label="Previous">
+											<span aria-hidden="true">&laquo;</span>
+											<span class="sr-only">Previous</span>
+										</a>
+									</li> -->
+ 									{% for i in (1..totalpage) %}
+									<li class="page-item"><a class="page-link {% if i == 1 %} active {% endif %}" href="#" data-first="{{ i | minus: 1 | times: pagesize}}" data-pagesize="{{pagesize}}">{{i}}</a></li>
+									{% endfor %}
+									<!-- <li class="page-item">
+										<a class="page-link" href="#" aria-label="Next">
+											<span aria-hidden="true">&raquo;</span>
+											<span class="sr-only">Next</span>
+										</a>
+									</li> -->
+							</ul>
+					</div>
+				</div>
+			</div>
 
-          <ul class="post-preview">
-            {% for post in site.categories.[page.category] %}
-            <li>
-              <a href="{{ post.url | prepend: site.baseurl }}">
-                <div class="row">
-                  <div class='col-sm-4'>
-                    <span class="post-title">
-            {{ post.title }} {% if page.comments %} <a href="{{ post.url | prepend: site.baseurl }}#disqus_thread">0 Comments</a>{% endif %}
-          </span> {% if post.subtitle %}
-                    <p class="post-subtitle">
-                      {{ post.subtitle }}
-                    </p>
-                    {% endif %}
-
-                  </div>
-                  <div class='col-sm-8 '>
-                    {% if post.description %}
-                    <span class="post-description">
-            {{ post.description }}
-          </span> {% endif %}
-                  </div>
-                </div>
-                <p class="post-meta">
-                  Posted by {% if post.author %} {{ post.author }} {% else %} {{ site.title }} {% endif %}
-                  <!--  on {{ post.date | date: "%B %-d, %Y" }} -->
-                </p>
-              </a>
-            </li>
-            {% endfor %}
-          </ul>
-        </div>
-      </div>
-
-          {% include sub_nav.html %}
-    </div> <!--row-->
-  </div>
-
-    {% include footer.html %}
+		</div>
+		{% endif %}
+		{% endif %}
+	</div>
+	{% include footer.html %}
+	<script>
+		$(document).ready(function() {
+			var category = new  wiselotis_categories();
+			category.init();
+		});
 
 
- </body>
+		var wiselotis_categories = function(){
+				var $posts = [];
+				self = this;
+				this.init = function(){
+					addEvent();
+					getPosts();
+				}
+				var addEvent = function(){
+ 					$(".post_open").on("click", function(e) {
+						e.preventDefault();
+						var $target = $(this).parents(".post_container");
+						$target.toggleClass("open");
+						$(this).toggleClass("hidden");
+						$(this).siblings(".post_fold").toggleClass("hidden");
+					})
+					$(".post_fold").on("click", function(e) {
+						e.preventDefault();
+						$(this).siblings(".post_open").trigger("click");
+					});
+					$(".btn-more-post").on("click", function(e){
+						e.preventDefault();
+						getNextPosts($(this));
+					})
+					$(".page-link").on("click", function(e){
+						e.preventDefault();
+						if(!$(this).hasClass("active")){
+								$(".page-link.active").removeClass("active");
+								$(this).addClass("active");
+								getNextList($(this));
+						}
+					});
+				};
+
+
+				var getPosts = function(){
+					$.ajax({
+									type: "GET"
+									,dataType: "xml"
+									,url: "/xml/{{page_category}}.xml"
+									,success: function(xml){
+											$posts = $(xml).find("post");
+									 }
+					});
+				}
+
+				var getNextPosts = function($el){
+					var $append_ul = $("<ul class='post_ul'></ul>"),
+							$last_ul = $(".postblock-wrapper .post_ul").last();
+
+					var startNo = $el.data("startNo"), endNo =  startNo + $el.data("limit");
+					var last = $posts.length - 1 ;
+					if( last < endNo ){
+						endNo = last;
+						$el.hide();
+						$el.data("startNo", 0);
+					}else{
+						$el.data("startNo", endNo + 1 );
+					}
+					var text ="";
+					for(var i = startNo ; i <= endNo ; i++ ){
+						var $post = $posts.eq(i);
+						text += "<li class='post_li'>"
+						text += "<div class='post_container'>"
+						text += "<p class='post_title'>" + $post.find("title").text();  + "</p>"
+						text += "<p class='post_contents'>" +  $post.find("content").text(); + "</p> "
+						text += "<a href='' class='post_open'> > 이 포스트 더보기 </a> "
+						text += "<a href='' class='post_fold hidden'> 접기 </a>"
+						text += "</div> "
+						text += "</li>";
+					}
+					$append_ul.html(text);
+
+					$append_ul.find(".post_open").on("click", function(e) {
+						e.preventDefault();
+						var $target = $(this).parents(".post_container");
+						$target.toggleClass("open");
+						$(this).toggleClass("hidden");
+						$(this).siblings(".post_fold").toggleClass("hidden");
+					})
+					$append_ul.find(".post_fold").on("click", function(e) {
+						e.preventDefault();
+						$(this).siblings(".post_open").trigger("click");
+					});
+
+					$append_ul.insertAfter($last_ul);
+				}
+
+				var getNextList = function($el){
+ 					var target_id = $el.parents(".pagination").data("target"),
+							$target = $(""+target_id+"");
+					var startNo = $el.data("first"), endNo = startNo + $el.data("pagesize");
+					var last = $posts.length - 1 ;
+					if(last < endNo){
+						endNo = last;
+					}
+					var text = "" ;
+					for(var i = startNo ; i <= endNo ; i++ ){
+						var $post = $posts.eq(i);
+							text += '<li class="post">';
+							text += '<a href="'+ $post.find("linkurl").text()+ '" class="post-link">';
+							text += '<span class="tit">'+$post.find("title").text()+'</span>';
+							text += '<span class="desc">'+$post.find("description").text()+'</span>';
+							text += '<span class="date">'+$post.find("date").text()+'</span>';
+							text += '</a>';
+							text += '</li>';
+					}
+
+					$target.html(text);
+				}
+		}
+	</script>
+</body>
+
 </html>

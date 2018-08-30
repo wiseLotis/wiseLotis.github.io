@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+    {% for post in site.categories.[page.category] %}
+    <post>
+      <title>{{post.title}}</title>
+      <linkurl>{{post.url}}</linkurl>
+      <subtitle>{{post.subtitle}}</subtitle>
+      <description>{{post.description}}</description>
+      <content>{{post.content}}</content>
+      <date>{{ post.date | date: "%B %-d, %Y" }}</date>
+    </post>
+    {% endfor %}
+</result>

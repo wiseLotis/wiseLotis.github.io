@@ -2,20 +2,22 @@
 
 body{
 	font-family: 'daumFont', normal !important;
-	font-weight: 400 !important;
+	font-weight: 400;
 	color: $fc-color;
-	font-size:15px;
+	width: 100vw;
+	font-size:14px;
+	background-color:$main-color;
 	@include respond-to('huge'){
-		font-size:15px;
-	}
-	@include respond-to('large'){
 		font-size:14px;
 	}
-	@include respond-to('medium'){
+	@include respond-to('large'){
 		font-size:13px;
 	}
-	@include respond-to('small'){
+	@include respond-to('medium'){
 		font-size:12px;
+	}
+	@include respond-to('small'){
+		font-size:11px;
 	}
 }
 *{
@@ -44,19 +46,78 @@ img{
 	font-size: 1.2em;
 }
 .content-wrapper{
-	@include respond-to("small"){
-		padding:20px !important;
+ 	padding: 20px 5vw;
+}
+.NODATA{
+	color:$main-color;
+}
+.negative{
+	color: #ffffff;
+}
+.container{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom : 60px;
+  min-height:100vh;
+  position:relative;
+  a{
+    @include linkColor($main-color,$sub-color,$dark-sub-color);
+  }
+}
+
+.btn{
+ 	border: 1px solid;
+	border-radius: 5px;
+	font-size: 0.8rem !important;
+	padding: 0.2em 0.6em 0.2em 2em !important;
+	position:relative;
+	i{
+		font-size: 1rem;
+		position:absolute;
+		left: 0.4em;
+		top: 0.2em;
 	}
 }
 
-.fold-btn-wrapper{
-	text-align:right;
-	.fold-btn{
-		font-size: 1.2em;
-		font-weight: 600;
+.fold-area-wrapper{
+	.a_tit{
+		display:inline-block;
+	}
+	.btn-wrapper{
+		text-align:right;
+		display:inline-block;
 	}
 	.fold-contents{
-		font-weight:400; 
+		font-weight:400;
+		display:none;
+		text-align:left;
+		&.active{
+			display:block;
+		}
+	}
+
+}
+.select-area-wrapper{
+	.btn-wrapper{
+		text-align:right;
+		margin-bottom : 10px;
+		a.area-link{
+			@include linkColor(rgba(255, 255, 255, 0.5),rgba(255, 255, 255, 0.5),rgba(255, 255, 255, 0.5));
+			&.active{
+				@include linkColor(#ffffff,#ffffff,#ffffff);
+			}
+			padding: 5px 10px;
+			border: 1px solid;
+			& + & {
+				margin-left: 1em;
+			}
+		}
+	}
+	.area-contents{
+		display:none;
+		&.active{
+			display:block;
+		}
 	}
 }
 
@@ -66,7 +127,7 @@ img{
 			.post + .post{
 				margin-top : 5px ;
 				padding-top: 10px;
-				border-top: 1px solid $mute-sub-color;
+				border-top: 1px solid $lite-sub-color;
 			}
 			.date{
 				float:right;
@@ -81,5 +142,39 @@ img{
 					}
 				}
 			}
+	}
+}
+
+.pagination-wrapper{
+	text-align:center;
+	.pagination{
+		display:inline-flex;
+	}
+}
+
+//top
+.top-btn-wrapper{
+	.top-btn{
+    display: inline-block;
+    line-height: 50px;
+    height: 50px;
+    color: #ffffff;
+    border: 1px solid;
+    width: 50px;
+    text-align: center;
+    border-radius: 100%;
+    position: fixed;
+    bottom: 20px;
+    right: 5vw;
+    background: $main-color;
+		z-index: 1000;
+		opacity: 0.9;
+		&a{
+			@include linkColor($bg-color,$bg-color,$bg-color)
+		}
+		span{
+			vertical-align:middle;
+			display:inline-block;
+		}
 	}
 }
