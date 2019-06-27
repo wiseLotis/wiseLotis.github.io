@@ -5,7 +5,7 @@ subtitle: ""
 slug: "task-basic-011-compile"
 description: ""
 categories: task
-tags: [task, home]
+tags: [task]
 comments: true
 image: "/assets/posts_con/cover_task.jpg"
 google: true

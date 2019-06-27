@@ -5,7 +5,7 @@ subtitle: "자료구조-트리"
 slug: "task-basic-007-tree"
 description: "트리를 구현해보자"
 categories: task
-tags: [task, home]
+tags: [task]
 comments: true
 image: "/assets/posts_con/cover_task.jpg"
 google: true

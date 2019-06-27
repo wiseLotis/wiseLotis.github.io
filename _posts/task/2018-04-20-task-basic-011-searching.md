@@ -5,7 +5,7 @@ subtitle: "자료구조-탐색"
 slug: "task-basic-011-searching "
 description: "탐색"
 categories: task
-tags: [task, home]
+tags: [task]
 comments: true
 image: "/assets/posts_con/cover_task.jpg"
 google: true

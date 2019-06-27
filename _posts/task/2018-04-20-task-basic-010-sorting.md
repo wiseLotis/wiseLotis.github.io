@@ -5,7 +5,7 @@ subtitle: "자료구조-소팅"
 slug: "task-basic-010-sorting "
 description: "효율적인 정렬"
 categories: task
-tags: [task, home]
+tags: [task]
 comments: true
 image: "/assets/posts_con/cover_task.jpg"
 google: true
